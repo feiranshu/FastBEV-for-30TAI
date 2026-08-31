@@ -1,0 +1,57 @@
+[parse]
+net_name = "fastbev_part3_nuscenes"
+framework = "onnx"
+inputs = [ 1, 200, 200, 4, 256]
+inputs_layout = "FD"
+inputs_dtype = "fp32"
+pre_method = "nop"
+pre_scale = "nop"
+pre_mean ="nop"
+channel_swap = "nop"
+network = "./fmodel/decoder/nuscenes/fastbev_part3_nuscenes.onnx"
+jr_path = "../deploy/imodel/decoder/nuscenes"
+target = "zhuge"
+log_path = "./logs/decoder/nuscenes/parse"
+
+[optimize]
+target = "zhuge"
+json = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_parsed.json"
+raw = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_parsed.raw"
+jr_path = "../deploy/imodel/decoder/nuscenes"
+log_path = "./logs/decoder/nuscenes/optimize"
+
+[quantize]
+saturation = "kld"
+forward_dir = "./qtset/decoder/nuscenes/coco"
+forward_list = "./qtset/decoder/nuscenes/coco.txt"
+json = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_optimized.json"
+raw = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_optimized.raw"
+jr_path = "../deploy/imodel/decoder/nuscenes"
+per = "channel"
+target = "zhuge"
+qdtype = "int8"
+log_path = "./logs/decoder/nuscenes/quantize"
+
+[adapt]
+target = "zhuge"
+json = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_quantized.json"
+raw = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_quantized.raw"
+jr_path = "../deploy/imodel/decoder/nuscenes"
+log_path = "./logs/decoder/nuscenes/adapt"
+
+[generate]
+json = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_adapted.json"
+raw = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_adapted.raw"
+jr_path = "../deploy/imodel/decoder/nuscenes"
+log_path = "./logs/decoder/nuscenes/generate"
+
+[run]
+log_time = true
+log_io = false
+dump_format = "SFB"
+backends = "ZG330,socket://zg330aiu@192.168.125.166:9981?npu=0x40000000&dma=0x80000000;Host"
+json = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_ZG.json"
+raw = "../deploy/imodel/decoder/nuscenes/fastbev_part3_nuscenes_ZG.raw"
+input = "./test/part3_input.ftmp"
+log_path = "./test/testlog"
+dump_output = true

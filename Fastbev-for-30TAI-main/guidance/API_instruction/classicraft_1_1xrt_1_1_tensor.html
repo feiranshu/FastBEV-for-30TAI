@@ -1,0 +1,763 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Class Tensor &#8212; Icraft XRT 3.33.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_cppapi/classicraft_1_1xrt_1_1_tensor';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Class TensorNode" href="classicraft_1_1xrt_1_1_tensor_node.html" />
+    <link rel="prev" title="Class SessionNode" href="classicraft_1_1xrt_1_1_session_node.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Icraft XRT 3.33.1.0 文档</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Icraft XRT
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="api_root.html">C++ API reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft.html">Namespace icraft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xir.html">Namespace icraft::xir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xrt.html">Namespace icraft::xrt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xrt__utils.html">Namespace icraft::xrt::utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_buyi_device.html">Class BuyiDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_buyi_device_node.html">Class BuyiDeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_default_mem_manager.html">Class DefaultMemManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_default_mem_manager_node.html">Class DefaultMemManagerNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device.html">Class Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device_node.html">Class DeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device_registry.html">Class DeviceRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_device.html">Class HostDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_device_node.html">Class HostDeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_mem_region.html">Class HostMemRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_mem_region_node.html">Class HostMemRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk.html">Class MemChunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk_node.html">Class MemChunkNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_manager.html">Class MemManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_manager_node.html">Class MemManagerNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_ptr.html">Class MemPtr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html">Class MemRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region_node.html">Class MemRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_m_m_u_map_table.html">Class MMUMapTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_m_m_u_map_table_node.html">Class MMUMapTableNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_reg_region.html">Class RegRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_reg_region_node.html">Class RegRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_seg_table.html">Class SegTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_seg_table_node.html">Class SegTableNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_session.html">Class Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_session_node.html">Class SessionNode</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Class Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_tensor_node.html">Class TensorNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1utils_1_1_url_parser.html">Class UrlParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_z_g330_device.html">Class ZG330Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_z_g330_device_node.html">Class ZG330DeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ae1a38cb593f243cb21e611d484537628.html">Function icraft::xrt::operator+(const MemPtr&amp;, uint64_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ac256b08b4de939f08f66ef2da848cd8e.html">Function icraft::xrt::operator+(uint64_t, const MemPtr&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a288b7ee752d26955ddfe0921eebc7906.html">Function icraft::xrt::operator-(const MemPtr&amp;, uint64_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a8b74090dfb3075d41129de3976a24270.html">Function icraft::xrt::operator-(const MemPtr&amp;, const MemPtr&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1aa01f01f51fd179f0d50ed1ea67de9d96.html">Function icraft::xrt::operator&lt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1adc331dcd1e69bc979cf076cbda4e8580.html">Function icraft::xrt::operator&lt;=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ae9e08156e1225760d595f320483e0d7b.html">Function icraft::xrt::operator&gt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a2089c7a554ac1b86c3c9944d353251d5.html">Function icraft::xrt::operator&gt;=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a01ca57d0ab88d81862d5d5210f92222f.html">Template Function icraft::xrt::utils::WaitUntil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_backend_8h_1affe7caed7c597b3591d53f7af539c17e.html">Define XRT_BACKEND_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_buyi__device_8h_1a2b67b900559a574ba875fa2a68e6d678.html">Define XRT_BUYI_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_device_8h_1ae0548dc6d8da27dde92f98f152854253.html">Define XRT_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_host__device_8h_1ace0c3cb27cfe14fda1eb036279836349.html">Define XRT_HOST_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_session_8h_1a9436b2f9bb5a3b3592dff0d9dcd1c1dd.html">Define XRT_SESSION_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_tensor_8h_1a960c4b8b0b7c90297ba211605833a9ff.html">Define XRT_TENSOR_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_zg330__device_8h_1a41c2f8bbd231401935b6d5aeeb040c1e.html">Define XRT_ZG330_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_device_8h_1a85bf30b5045c0b4dfd06d1d7fa0177db.html">Typedef icraft::xrt::FChunkDeleter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_session_8h_1a4ac58eb09e80088914f526b5d1fd51ca.html">Typedef icraft::xrt::TimeProfileResults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_autosummary/xrt.html">Python API reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">更新日志</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../changelogs/change_logs.html">更新日志</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Class Tensor</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-relationships">Inheritance Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-documentation">Class Documentation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-tensor">
+<span id="exhale-class-classicraft-1-1xrt-1-1-tensor"></span><h1>Class Tensor<a class="headerlink" href="#class-tensor" title="此标题的永久链接">#</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_icraft-xrt_core_tensor.h.html#file-icraft-xrt-core-tensor-h"><span class="std std-ref">File tensor.h</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="此标题的永久链接">#</a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="此标题的永久链接">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">icraft::xir::HandleBase&lt;</span> <span class="pre">Tensor,</span> <span class="pre">Handle,</span> <span class="pre">TensorNode</span> <span class="pre">&gt;</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="此标题的永久链接">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6TensorE">
+<span id="_CPPv3N6icraft3xrt6TensorE"></span><span id="_CPPv2N6icraft3xrt6TensorE"></span><span id="icraft::xrt::Tensor"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Tensor</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">icraft</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">xir</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">HandleBase</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Handle</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_tensor_node.html#_CPPv4N6icraft3xrt10TensorNodeE" title="icraft::xrt::TensorNode"><span class="n"><span class="pre">TensorNode</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6icraft3xrt6TensorE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>张量的引用类. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor9CheckFuncE">
+<span id="_CPPv3N6icraft3xrt6Tensor9CheckFuncE"></span><span id="_CPPv2N6icraft3xrt6Tensor9CheckFuncE"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a98da44f6bdca7cb78e3801d76c4125f8"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CheckFunc</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">bool</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_device.html#_CPPv4N6icraft3xrt6DeviceE" title="icraft::xrt::Device"><span class="n"><span class="pre">Device</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor9CheckFuncE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>Tensor的检查函数，用于检查是否ready </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor6TensorEv">
+<span id="_CPPv3N6icraft3xrt6Tensor6TensorEv"></span><span id="_CPPv2N6icraft3xrt6Tensor6TensorEv"></span><span id="icraft::xrt::Tensor::Tensor"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1adc4bf6dc90c4b8ed355154753b2d9ed5"></span><span class="sig-name descname"><span class="n"><span class="pre">Tensor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor6TensorEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>默认构造函数 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor6TensorE10TensorType8MemChunk8uint64_t9CheckFunc">
+<span id="_CPPv3N6icraft3xrt6Tensor6TensorE10TensorType8MemChunk8uint64_t9CheckFunc"></span><span id="_CPPv2N6icraft3xrt6Tensor6TensorE10TensorType8MemChunk8uint64_t9CheckFunc"></span><span id="icraft::xrt::Tensor::Tensor__TensorType.MemChunk.uint64_t.CheckFunc"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1ad16196de4d13192db9a3aa2e7527cbbb"></span><span class="sig-name descname"><span class="n"><span class="pre">Tensor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TensorType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dtype</span></span>, <a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk.html#_CPPv4N6icraft3xrt8MemChunkE" title="icraft::xrt::MemChunk"><span class="n"><span class="pre">MemChunk</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">chunk</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <a class="reference internal" href="#_CPPv4N6icraft3xrt6Tensor9CheckFuncE" title="icraft::xrt::Tensor::CheckFunc"><span class="n"><span class="pre">CheckFunc</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">check_func</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor6TensorE10TensorType8MemChunk8uint64_t9CheckFunc" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> – 数据类型 </p></li>
+<li><p><strong>chunk</strong> – 数据所在的内存块 </p></li>
+<li><p><strong>offset</strong> – 数据在内存块中的偏移 </p></li>
+<li><p><strong>check_func</strong> – 状态检查函数 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor6TensorE10TensorType9CheckFunc">
+<span id="_CPPv3N6icraft3xrt6Tensor6TensorE10TensorType9CheckFunc"></span><span id="_CPPv2N6icraft3xrt6Tensor6TensorE10TensorType9CheckFunc"></span><span id="icraft::xrt::Tensor::Tensor__TensorType.CheckFunc"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1add9505dafbe8ba71d7f3093790ae4a99"></span><span class="sig-name descname"><span class="n"><span class="pre">Tensor</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TensorType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dtype</span></span>, <a class="reference internal" href="#_CPPv4N6icraft3xrt6Tensor9CheckFuncE" title="icraft::xrt::Tensor::CheckFunc"><span class="n"><span class="pre">CheckFunc</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">func</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">nullptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor6TensorE10TensorType9CheckFunc" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数，构造一个没有数据的Tensor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> – 数据类型 </p></li>
+<li><p><strong>check_func</strong> – 状态检查函数 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor6TensorERKN6icraft3xir5ValueE">
+<span id="_CPPv3N6icraft3xrt6Tensor6TensorERKN6icraft3xir5ValueE"></span><span id="_CPPv2N6icraft3xrt6Tensor6TensorERKN6icraft3xir5ValueE"></span><span id="icraft::xrt::Tensor::Tensor__icraft::xir::ValueCR"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a8675fafb4621656c5b93a05ed037699c"></span><span class="sig-name descname"><span class="n"><span class="pre">Tensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">icraft</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">xir</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Value</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor6TensorERKN6icraft3xir5ValueE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数，从xir::Value构造. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor6TensorERKN6icraft3xir6ParamsE">
+<span id="_CPPv3N6icraft3xrt6Tensor6TensorERKN6icraft3xir6ParamsE"></span><span id="_CPPv2N6icraft3xrt6Tensor6TensorERKN6icraft3xir6ParamsE"></span><span id="icraft::xrt::Tensor::Tensor__icraft::xir::ParamsCR"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a696f7282d424147b57c2c4aa6f1d72c5"></span><span class="sig-name descname"><span class="n"><span class="pre">Tensor</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">icraft</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">xir</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Params</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor6TensorERKN6icraft3xir6ParamsE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数，从xir::Params构造. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor8setDTypeE10TensorType">
+<span id="_CPPv3N6icraft3xrt6Tensor8setDTypeE10TensorType"></span><span id="_CPPv2N6icraft3xrt6Tensor8setDTypeE10TensorType"></span><span id="icraft::xrt::Tensor::setDType__TensorType"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a0d0f6f66adc69c6442f7133b09886c9f"></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setDType</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">TensorType</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dtype</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor8setDTypeE10TensorType" title="永久链接至目标">#</a><br /></dt>
+<dd><p>设置张量的数据类型. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dtype</strong> – 被设置的数据类型 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor7setDataE8MemChunk8uint64_t">
+<span id="_CPPv3N6icraft3xrt6Tensor7setDataE8MemChunk8uint64_t"></span><span id="_CPPv2N6icraft3xrt6Tensor7setDataE8MemChunk8uint64_t"></span><span id="icraft::xrt::Tensor::setData__MemChunk.uint64_t"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1ae41f367711589d606a635339653a0577"></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setData</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk.html#_CPPv4N6icraft3xrt8MemChunkE" title="icraft::xrt::MemChunk"><span class="n"><span class="pre">MemChunk</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">chunk</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor7setDataE8MemChunk8uint64_t" title="永久链接至目标">#</a><br /></dt>
+<dd><p>设置张量数据所在的内存块. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chunk</strong> – 数据所在内存块 </p></li>
+<li><p><strong>offset</strong> – 数据在内存块中的偏移 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor12setCheckFuncE9CheckFunc">
+<span id="_CPPv3N6icraft3xrt6Tensor12setCheckFuncE9CheckFunc"></span><span id="_CPPv2N6icraft3xrt6Tensor12setCheckFuncE9CheckFunc"></span><span id="icraft::xrt::Tensor::setCheckFunc__CheckFunc"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1aa4657ef155cadcb73f5774a88a1d49e4"></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setCheckFunc</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6icraft3xrt6Tensor9CheckFuncE" title="icraft::xrt::Tensor::CheckFunc"><span class="n"><span class="pre">CheckFunc</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">check_func</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor12setCheckFuncE9CheckFunc" title="永久链接至目标">#</a><br /></dt>
+<dd><p>设置张量的数据检查函数. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>check_func</strong> – 状态检查函数 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor8setReadyEb">
+<span id="_CPPv3N6icraft3xrt6Tensor8setReadyEb"></span><span id="_CPPv2N6icraft3xrt6Tensor8setReadyEb"></span><span id="icraft::xrt::Tensor::setReady__b"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a37a9ee4223725585b19233a376160d68"></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">setReady</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ready</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor8setReadyEb" title="永久链接至目标">#</a><br /></dt>
+<dd><p>设置张量的的状态. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ready</strong> – 状态是否ready </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor8mallocOnERK9MemRegion">
+<span id="_CPPv3N6icraft3xrt6Tensor8mallocOnERK9MemRegion"></span><span id="_CPPv2N6icraft3xrt6Tensor8mallocOnERK9MemRegion"></span><span id="icraft::xrt::Tensor::mallocOn__MemRegionCR"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1ac88ea1a39dd830a0fd4ab395af3f1bf8"></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">mallocOn</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html#_CPPv4N6icraft3xrt9MemRegionE" title="icraft::xrt::MemRegion"><span class="n"><span class="pre">MemRegion</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mregion</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor8mallocOnERK9MemRegion" title="永久链接至目标">#</a><br /></dt>
+<dd><p>在指定的MemRegion上分配Tensor所需要的内存. </p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>如果Tensor已经分配了内存块，该方法会覆盖原有的内存块 </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mregion</strong> – 指定的MemRegion</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6Tensor8copyFromE8uint64_tRK6Tensor8uint64_t8uint64_t">
+<span id="_CPPv3N6icraft3xrt6Tensor8copyFromE8uint64_tRK6Tensor8uint64_t8uint64_t"></span><span id="_CPPv2N6icraft3xrt6Tensor8copyFromE8uint64_tRK6Tensor8uint64_t8uint64_t"></span><span id="icraft::xrt::Tensor::copyFrom__uint64_t.TensorCR.uint64_t.uint64_t"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a6ef83dab0459f507f9d6ca10a544637d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">copyFrom</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dest_offset</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src_tensor</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">src_offset</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">byte_size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6Tensor8copyFromE8uint64_tRK6Tensor8uint64_t8uint64_t" title="永久链接至目标">#</a><br /></dt>
+<dd><p>从指定的Tensor复制数据. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest_offset</strong> – 目标偏移位置 </p></li>
+<li><p><strong>src_tensor</strong> – 源Tensor </p></li>
+<li><p><strong>src_offset</strong> – 源偏移位置 </p></li>
+<li><p><strong>byte_size</strong> – 字节大小 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor4dataEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor4dataEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor4dataEv"></span><span id="icraft::xrt::Tensor::dataC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a39755d08bbc1cfc920bcdb9fc3db0ef7"></span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_ptr.html#_CPPv4N6icraft3xrt6MemPtrE" title="icraft::xrt::MemPtr"><span class="n"><span class="pre">MemPtr</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">data</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor4dataEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该Tensor数据的起始位置指针 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor5chunkEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor5chunkEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor5chunkEv"></span><span id="icraft::xrt::Tensor::chunkC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1aa8158f2f657a1b8ace045a95b99a81c2"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk.html#_CPPv4N6icraft3xrt8MemChunkE" title="icraft::xrt::MemChunk"><span class="n"><span class="pre">MemChunk</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">chunk</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor5chunkEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该Tensor数据所在的内存块 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor6offsetEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor6offsetEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor6offsetEv"></span><span id="icraft::xrt::Tensor::offsetC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a61898252c95384040f1b4f81d3d82fcf"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">offset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor6offsetEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该Tensor数据在内存块中的偏移 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor5dtypeEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor5dtypeEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor5dtypeEv"></span><span id="icraft::xrt::Tensor::dtypeC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a5863aeefe90996d4cc19acef8b267314"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">TensorType</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">dtype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor5dtypeEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该Tensor的数据类型 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor7isReadyEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor7isReadyEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor7isReadyEv"></span><span id="icraft::xrt::Tensor::isReadyC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a10d0125df491766f513500fba44cfe67"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isReady</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor7isReadyEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>检查该Tensor是否ready </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor7hasDataEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor7hasDataEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor7hasDataEv"></span><span id="icraft::xrt::Tensor::hasDataC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a314b19ebe3b2ce78e9df49fee95c21dd"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hasData</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor7hasDataEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>检查该Tensor是否具有数据 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor4readEPc8uint64_t8uint64_t">
+<span id="_CPPv3NK6icraft3xrt6Tensor4readEPc8uint64_t8uint64_t"></span><span id="_CPPv2NK6icraft3xrt6Tensor4readEPc8uint64_t8uint64_t"></span><span id="icraft::xrt::Tensor::read__cP.uint64_t.uint64_tC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a75db38ad835e85d582d5f5b15bbae0fb"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">src_offset</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">byte_size</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor4readEPc8uint64_t8uint64_t" title="永久链接至目标">#</a><br /></dt>
+<dd><p>读取指定偏移的数据. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> – 数据被读取到char*表示的缓存 </p></li>
+<li><p><strong>src_offset</strong> – 从该偏移开始读取数据 </p></li>
+<li><p><strong>byte_size</strong> – 读取数据的字节大小 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor5writeE8uint64_tPc8uint64_t">
+<span id="_CPPv3NK6icraft3xrt6Tensor5writeE8uint64_tPc8uint64_t"></span><span id="_CPPv2NK6icraft3xrt6Tensor5writeE8uint64_tPc8uint64_t"></span><span id="icraft::xrt::Tensor::write__uint64_t.cP.uint64_tC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a6eb1987ea81e3bbf7e712e71e8bb8ed9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dest_offset</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">src</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">byte_size</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor5writeE8uint64_tPc8uint64_t" title="永久链接至目标">#</a><br /></dt>
+<dd><p>将数据写到指定偏移位置. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest_offset</strong> – 数据被写入的偏移位置 </p></li>
+<li><p><strong>src</strong> – char*表示的数据缓存 </p></li>
+<li><p><strong>byte_size</strong> – 写入数据的字节大小 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor2toERK9MemRegion">
+<span id="_CPPv3NK6icraft3xrt6Tensor2toERK9MemRegion"></span><span id="_CPPv2NK6icraft3xrt6Tensor2toERK9MemRegion"></span><span id="icraft::xrt::Tensor::to__MemRegionCRC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1afc7461544d88d089c348aeb9c001e59d"></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html#_CPPv4N6icraft3xrt9MemRegionE" title="icraft::xrt::MemRegion"><span class="n"><span class="pre">MemRegion</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mregion</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor2toERK9MemRegion" title="永久链接至目标">#</a><br /></dt>
+<dd><p>&#64;biref 将Tensor复制到指定的MemRegion的上. </p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>如果该Tensor已经在指定的MemRegion上，则复制不会发生，而是直接返回原Tensor </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mregion</strong> – 指定的MemRegion </p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>在指定MemRegion复制得到的Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor4isOnERK9MemRegion">
+<span id="_CPPv3NK6icraft3xrt6Tensor4isOnERK9MemRegion"></span><span id="_CPPv2NK6icraft3xrt6Tensor4isOnERK9MemRegion"></span><span id="icraft::xrt::Tensor::isOn__MemRegionCRC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a7223786db1ee3e671eff5fbbbbe1cee7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isOn</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html#_CPPv4N6icraft3xrt9MemRegionE" title="icraft::xrt::MemRegion"><span class="n"><span class="pre">MemRegion</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">mregion</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor4isOnERK9MemRegion" title="永久链接至目标">#</a><br /></dt>
+<dd><p>检查该Tensor是否在指定的MemRegion上. </p>
+<dl class="field-list simple">
+<dt class="field-odd">模板参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mregion</strong> – 指定的MemRegion </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor9memRegionEv">
+<span id="_CPPv3NK6icraft3xrt6Tensor9memRegionEv"></span><span id="_CPPv2NK6icraft3xrt6Tensor9memRegionEv"></span><span id="icraft::xrt::Tensor::memRegionC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a4952298ab05684d609400472b436e458"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html#_CPPv4N6icraft3xrt9MemRegionE" title="icraft::xrt::MemRegion"><span class="n"><span class="pre">MemRegion</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">memRegion</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor9memRegionEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该Tensor所在的MemRegion </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6Tensor4dumpERNSt7ostreamERKNSt6stringE">
+<span id="_CPPv3NK6icraft3xrt6Tensor4dumpERNSt7ostreamERKNSt6stringE"></span><span id="_CPPv2NK6icraft3xrt6Tensor4dumpERNSt7ostreamERKNSt6stringE"></span><span id="icraft::xrt::Tensor::dump__osR.ssCRC"></span><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a4d81f0dbc1cd7aad3c3d73da333da1ea"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dump</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">os</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">format</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6Tensor4dumpERNSt7ostreamERKNSt6stringE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>将Tensor的数据按指定格式导出到指定的输出流中. </p>
+<p>
+若一个Tensor原本的排布时H，那么可以转为S；若原本的数值为Q，那么可以转为F；反之不可 </p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>支持的格式由三个字母表示：<ul class="simple">
+<li><p>第一个字母表示排布，H表示硬件，S表示软件</p></li>
+<li><p>第二个字母表示数值，F表示浮点，Q表示定点</p></li>
+<li><p>第三个字母表示序列化形式，B表示二进制，T表示文本</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>os</strong> – 指定的输出流 </p></li>
+<li><p><strong>format</strong> – 指定的输出格式</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE">
+<span id="_CPPv3I00ENK6icraft3xrt6Tensor12waitForReadyENSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE"></span><span id="_CPPv2I00ENK6icraft3xrt6Tensor12waitForReadyENSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Rep</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Period</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a0b45587577963fd3c66effa36d758f45"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">waitForReady</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="icraft::xrt::Tensor::waitForReady::Rep"><span class="n"><span class="pre">Rep</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="icraft::xrt::Tensor::waitForReady::Period"><span class="n"><span class="pre">Period</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="icraft::xrt::Tensor::waitForReady::Rep"><span class="n"><span class="pre">Rep</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="icraft::xrt::Tensor::waitForReady::Period"><span class="n"><span class="pre">Period</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sleep</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="icraft::xrt::Tensor::waitForReady::Rep"><span class="n"><span class="pre">Rep</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="icraft::xrt::Tensor::waitForReady::Period"><span class="n"><span class="pre">Period</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">zero</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4I00ENK6icraft3xrt6Tensor12waitForReadyEbNSt6chrono8durationI3Rep6PeriodEENSt6chrono8durationI3Rep6PeriodEE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>等待Tensor的状态ready. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timeout</strong> – 等待的超时时间，超时则返回false </p></li>
+<li><p><strong>sleep</strong> – 两次查询之间的休眠时间，默认为0 </p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>若timeout时间内查询到状态ready则返回true，否则返回false </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I00EN6icraft3xrt6Tensor4fillER6TensorNSt8functionIF1T8uint64_tEEE">
+<span id="_CPPv3I00EN6icraft3xrt6Tensor4fillENSt8functionIF1T8uint64_tEEE"></span><span id="_CPPv2I00EN6icraft3xrt6Tensor4fillENSt8functionIF1T8uint64_tEEE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">enable_if_t</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">is_pod_v</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00EN6icraft3xrt6Tensor4fillER6TensorNSt8functionIF1T8uint64_tEEE" title="icraft::xrt::Tensor::fill::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classicraft_1_1xrt_1_1_tensor_1a7ead3b6912c9bd0e1d9a97afd9abcd67"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6icraft3xrt6TensorE" title="icraft::xrt::Tensor"><span class="n"><span class="pre">Tensor</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">fill</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I00EN6icraft3xrt6Tensor4fillER6TensorNSt8functionIF1T8uint64_tEEE" title="icraft::xrt::Tensor::fill::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">f</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I00EN6icraft3xrt6Tensor4fillER6TensorNSt8functionIF1T8uint64_tEEE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>填充数据 </p>
+<dl class="field-list simple">
+<dt class="field-odd">模板参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – 被填充数据的类型，必须是POD </p>
+</dd>
+<dt class="field-even">参数<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>f</strong> – 数据的生成函数，以index作为参数返回对应的T </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="classicraft_1_1xrt_1_1_session_node.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">Class SessionNode</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classicraft_1_1xrt_1_1_tensor_node.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Class TensorNode</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-relationships">Inheritance Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-documentation">Class Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： chenghongxu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, FMSH.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+下载站网址 https://www.nuscenes.org/nuscenes#download
+需下载 Full dataset (v1.0)	Mini版本（Metadata and sensor file blobs  [US, Asia])   大约3.88个G
+
+下载后格式
+nuscenes/
+├── samples/
+├── sweeps/
+├── v1.0-mini/
+├── .v1.0-mini.txt
+└── LICENSE
+
+将nuscenes放在app/dataset目录下即可

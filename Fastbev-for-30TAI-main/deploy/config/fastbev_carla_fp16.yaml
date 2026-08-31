@@ -1,0 +1,77 @@
+# FastBEV CARLA FP16 Part3 validation configuration.
+# Requires the legacy Part2 bitstream that writes FP32 BEV to PLDDR. The
+# fastbev_pipeline_carla_fp16 executable reads that output through PS, repeats
+# it four times, and feeds the complete FP16 Decoder network.
+
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+extractor:
+  dir: ./imodel/extractor/carla
+  stage: g
+  run_backend: zg330
+
+decoder:
+  dir: ./imodel/decoder/carla_fp16
+  stage: g
+  run_backend: zg330
+
+dataset:
+  imageDir: ./io/input/data/dataset_info.json
+  lutDir: ./io/input/fastbev_lut_table.bin
+  boxDir: ./io/output/result
+  pngDir: ./io/output/png
+  paraDir: ./io/output/parameter
+  logDir: ./io/log
+  camera: 6
+  imageW: 176
+  imageH: 64
+
+bev:
+  bevx: 200
+  bevy: 200
+  bevz: 4
+  channels: 64
+  fp32Bytes: 4
+
+nms:
+  # FP16 CARLA detection and audio-alert confidence threshold.
+  threshold: 0.8
+  # Lower IoU thresholds make same-class duplicate suppression more aggressive.
+  threslist: [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.05, 0.05, 0.02]
+  # Same-class BEV center-distance suppression for motorcycle/pedestrian.
+  pedestrian_motorcycle_center_distance_m: 3.0
+  # Cross-class rotated-IoU suppression for classes 0-4, 6 and 7.
+  cross_class_iou_threshold: 0.20
+
+# Audio-only collision alert. This target never initializes the FPGA LED path.
+alert:
+  enabled: true
+  confidence_threshold: 0.8
+  class_ids: [0, 1, 2, 3, 4, 6, 7]
+  distance_m:
+    caution: 10.0
+    danger: 5.0
+    emergency: 3.0
+  confirm_frames:
+    caution: 3
+    danger: 2
+    emergency: 2
+  clear_frames: 3
+  hysteresis_m: 2.0
+  direction_degrees:
+    front_half_width: 30.0
+    diagonal_width: 60.0
+  led:
+    enabled: false
+  audio:
+    enabled: true
+    device: "plughw:CARD=UACDemoV10,DEV=0"
+    directory: ./assets/alerts
+    cooldown_ms: 5000
+    minimum_level: danger
+    emergency_preempts: true

@@ -1,0 +1,57 @@
+[parse]
+net_name = "fastbev_part3_carla"
+framework = "onnx"
+inputs = [ 1, 4, 200, 200, 256]
+inputs_layout = "FD"
+inputs_dtype = "fp32"
+pre_method = "nop"
+pre_scale = "nop"
+pre_mean ="nop"
+channel_swap = "nop"
+network = "./fmodel/decoder/carla/fastbev_part3_carla.onnx"
+jr_path = "../deploy/imodel/decoder/carla"
+target = "zhuge"
+log_path = "./logs/decoder/carla/parse"
+
+[optimize]
+target = "zhuge"
+json = "../deploy/imodel/decoder/carla/fastbev_part3_carla_parsed.json"
+raw = "../deploy/imodel/decoder/carla/fastbev_part3_carla_parsed.raw"
+jr_path = "../deploy/imodel/decoder/carla"
+log_path = "./logs/decoder/carla/optimize"
+
+[quantize]
+saturation = "kld"
+forward_dir = "./qtset/decoder/carla/coco"
+forward_list = "./qtset/decoder/carla/coco.txt"
+json = "../deploy/imodel/decoder/carla/fastbev_part3_carla_optimized.json"
+raw = "../deploy/imodel/decoder/carla/fastbev_part3_carla_optimized.raw"
+jr_path = "../deploy/imodel/decoder/carla"
+per = "channel"
+target = "zhuge"
+qdtype = "int8"
+log_path = "./logs/decoder/carla/quantize"
+
+[adapt]
+target = "zhuge"
+json = "../deploy/imodel/decoder/carla/fastbev_part3_carla_quantized.json"
+raw = "../deploy/imodel/decoder/carla/fastbev_part3_carla_quantized.raw"
+jr_path = "../deploy/imodel/decoder/carla"
+log_path = "./logs/decoder/carla/adapt"
+
+[generate]
+json = "../deploy/imodel/decoder/carla/fastbev_part3_carla_adapted.json"
+raw = "../deploy/imodel/decoder/carla/fastbev_part3_carla_adapted.raw"
+jr_path = "../deploy/imodel/decoder/carla"
+log_path = "./logs/decoder/carla/generate"
+
+[run]
+log_time = true
+log_io = false
+dump_format = "SFB"
+backends = "ZG330,socket://zg330aiu@192.168.125.166:9981?npu=0x40000000&dma=0x80000000;Host"
+json = "../deploy/imodel/decoder/carla/fastbev_part3_carla_ZG.json"
+raw = "../deploy/imodel/decoder/carla/fastbev_part3_carla_ZG.raw"
+input = "./test/part3_input.ftmp"
+log_path = "./test/testlog"
+dump_output = true

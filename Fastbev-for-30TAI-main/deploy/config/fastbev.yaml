@@ -1,0 +1,83 @@
+# ==============================================================================
+# FastBEV 全流水线配置文件
+# Part1(NPU Extractor) + Part2(FPGA LUT) + Part3(NPU Decoder)
+# ==============================================================================
+
+# ── 设备配置（AXI 模式，三个 Part 共用，NPU 参数统一） ──
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+# ── Part1: Extractor 网络 ──
+extractor:
+  dir: ./imodel/extractor/nuscenes
+  stage: g
+  run_backend: zg330
+
+# ── Part3: Decoder 网络 ──
+decoder:
+  dir: ./imodel/decoder/nuscenes
+  stage: g
+  run_backend: zg330
+
+# ── 数据集与 IO 路径 ──
+dataset:
+  imageDir: ./io/input/data/dataset_info.json
+  lutDir: ./io/input/fastbev_lut_table.bin
+  boxDir: ./io/output/result
+  pngDir: ./io/output/png
+  paraDir: ./io/output/parameter
+  logDir: ./io/log
+  camera: 6
+  imageW: 176
+  imageH: 64
+
+# ── BEV 空间参数 ──
+bev:
+  bevx: 200
+  bevy: 200
+  bevz: 4
+  channels: 64
+  fp32Bytes: 4
+
+# ── NMS 后处理参数 ──
+nms:
+  threshold: 0.6
+  threslist: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.5, 0.5, 0.2]
+
+# FPGA LED and USB-audio collision alerts used only by fastbev_pipeline_audio.
+# The normal pipeline ignores this section.
+alert:
+  enabled: true
+  confidence_threshold: 0.62
+  class_ids: [0, 1, 2, 3, 4, 5, 6, 7]
+  distance_m:
+    caution: 10.0
+    danger: 5.0
+    emergency: 3.0
+  confirm_frames:
+    caution: 3
+    danger: 2
+    emergency: 2
+  clear_frames: 3
+  hysteresis_m: 2.0
+  direction_degrees:
+    front_half_width: 30.0
+    diagonal_width: 60.0
+  led:
+    enabled: true
+    dev_mem: /dev/mem
+    duration_ms: 3000
+    refresh_ms: 2500
+    danger_toggle_ms: 500
+    emergency_toggle_ms: 125
+  audio:
+    enabled: true
+    device: "plughw:CARD=UACDemoV10,DEV=0"
+    directory: ./assets/alerts
+    cooldown_ms: 5000
+    minimum_level: danger
+    emergency_preempts: true

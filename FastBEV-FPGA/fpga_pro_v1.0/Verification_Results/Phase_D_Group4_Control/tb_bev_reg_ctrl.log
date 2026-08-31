@@ -1,0 +1,135 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Jul 11 22:10:03 2026
+# Process ID         : 20332
+# Current directory  : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_bev_reg_ctrl_sim/xsim_script.tcl}
+# Log file           : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/xsim.log
+# Journal file       : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim\xsim.jou
+# Running On         : feiranshu
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i9-13900H
+# CPU Frequency      : 2995 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 34016 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36164 MB
+# Available Virtual  : 16369 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_bev_reg_ctrl_sim/xsim_script.tcl
+# xsim {tb_bev_reg_ctrl_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+
+===== TEST GROUP 1: Reset Defaults =====
+[PASS] Test 1: lut_base_addr reset  (got 0x00000000)
+[PASS] Test 2: lut_size reset=160000  (got 0x00027100)
+[PASS] Test 3: feat2d_base reset  (got 0x00000000)
+[PASS] Test 4: bev_channels reset=64  (got 0x00000040)
+[PASS] Test 5: bev_x reset=200  (got 0x000000c8)
+[PASS] Test 6: bev_y reset=200  (got 0x000000c8)
+[PASS] Test 7: bev_z reset=4  (got 0x00000004)
+[PASS] Test 8: img_w reset=176  (got 0x000000b0)
+[PASS] Test 9: img_h reset=64  (got 0x00000040)
+[PASS] Test 10: cameras reset=6  (got 0x00000006)
+[PASS] Test 11: sa_size reset=40000  (got 0x00009c40)
+[PASS] Test 12: xform_a00 reset=1.0  (got 0x00010000)
+[PASS] Test 13: xform_a01 reset=0  (got 0x00000000)
+[PASS] Test 14: xform_a11 reset=1.0  (got 0x00010000)
+[PASS] Test 15: frame_size reset  (got 0x009c4000)
+[PASS] Test 16: comp_start reset=0  (got 0x00000000)
+[PASS] Test 17: comp_mode reset=group4  (got 0x00000003)
+[PASS] Test 18: ext_mode reset=0  (got 0x00000000)
+[PASS] Test 19: feat2d_fp32 reset  (got 0x00000000)
+[PASS] Test 20: feat2d_int8 reset  (got 0x00000000)
+[PASS] Test 21: concat_out reset  (got 0x00000000)
+[PASS] Test 22: xform_h0_a00 reset=1.0  (got 0x00010000)
+[PASS] Test 23: xform_h1_a11 reset=1.0  (got 0x00010000)
+[PASS] Test 24: xform_h2_a02 reset=0  (got 0x00000000)
+
+===== TEST GROUP 2: Write & Readback =====
+[PASS] Test 25: lut_base_addr write  (got 0x10000000)
+[PASS] Test 26: lut_base_addr readback  (got 0x10000000)
+[PASS] Test 27: lut_size write=8  (got 0x00000008)
+[PASS] Test 28: lut_size readback  (got 0x00000008)
+[PASS] Test 29: feat2d_base write  (got 0x20000000)
+[PASS] Test 30: feat3d_wr_addr write  (got 0x30000000)
+[PASS] Test 31: sa_src_addr write  (got 0xa0000000)
+[PASS] Test 32: sa_dst_addr write  (got 0xb0000000)
+[PASS] Test 33: sa_size write=1000  (got 0x000003e8)
+[PASS] Test 34: xform_a00 write=2.0  (got 0x00020000)
+[PASS] Test 35: xform_a00 readback  (got 0x00020000)
+[PASS] Test 36: frame0_addr write  (got 0xf1000000)
+[PASS] Test 37: frame1_addr write  (got 0xf2000000)
+[PASS] Test 38: debug_reg readback  (got 0x12345678)
+[PASS] Test 39: ext_mode write=5  (got 0x00000005)
+[PASS] Test 40: ext_mode readback  (got 0x00000005)
+[PASS] Test 41: feat2d_fp32 write  (got 0x21000000)
+[PASS] Test 42: feat2d_int8 write  (got 0x22000000)
+[PASS] Test 43: concat_out write  (got 0x38000000)
+[PASS] Test 44: group_ctrl write  (got 0x00000005)
+[PASS] Test 45: perf_stage_sel write  (got 0x00000003)
+[PASS] Test 46: xform_h0_a00 write  (got 0x00018000)
+[PASS] Test 47: xform_h1_a11 write  (got 0x0000c000)
+[PASS] Test 48: xform_h2_a12 write  (got 0xffff0000)
+[PASS] Test 49: error_status_w1c data  (got 0x000000f0)
+[PASS] Test 50: error_status_w1c pulse  (got 0x00000001)
+[PASS] Test 51: error_status_w1c pulse cleared  (got 0x00000000)
+
+===== TEST GROUP 3: Packed Registers =====
+[PASS] Test 52: bev_channels=32 after pack write  (got 0x00000020)
+[PASS] Test 53: bev_x=150 after pack write  (got 0x00000096)
+[PASS] Test 54: bev_y=100 after pack write  (got 0x00000064)
+[PASS] Test 55: bev_z=8 after pack write  (got 0x00000008)
+[PASS] Test 56: BEV_PARAMS readback  (got 0x08649620)
+[PASS] Test 57: cameras=4 after pack write  (got 0x00000004)
+[PASS] Test 58: img_h=256 after pack write  (got 0x00000100)
+[PASS] Test 59: img_w=320 after pack write  (got 0x00000140)
+[PASS] Test 60: IMG_PARAMS readback  (got 0x04100140)
+
+===== TEST GROUP 4: comp_start Pulse =====
+[PASS] Test 61: comp_start auto-cleared  (got 0x00000000)
+[PASS] Test 62: comp_mode fixed group4  (got 0x00000003)
+[PASS] Test 63: frame_shift ignored  (got 0x00000000)
+[PASS] Test 64: comp_start auto-cleared again  (got 0x00000000)
+[PASS] Test 65: comp_mode still group4  (got 0x00000003)
+[PASS] Test 66: frame_shift still ignored  (got 0x00000000)
+
+===== TEST GROUP 5: comp_done Latch =====
+[PASS] Test 67: comp_done_reg=0 after start  (got 0x00000000)
+[PASS] Test 68: comp_done_reg=1 after done pulse  (got 0x00000001)
+[PASS] Test 69: comp_done_reg persists  (got 0x00000001)
+[PASS] Test 70: mp_done_reg cleared by new start  (got 0x00000000)
+
+===== TEST GROUP 6: Read-Only Registers =====
+[PASS] Test 71: status_reg readback  (got 0x000000a5)
+[PASS] Test 72: perf_cnt_lo readback  (got 0xdeadbeef)
+[PASS] Test 73: perf_cnt_hi readback  (got 0xcafebabe)
+[PASS] Test 74: VERSION readback  (got 0x20260707)
+[PASS] Test 75: GROUP_STATUS readback  (got 0x000000b7)
+[PASS] Test 76: ERROR_STATUS readback  (got 0x00000009)
+
+===== TEST GROUP 7: Handshake =====
+[PASS] Test 77: ra_awready always 1  (got 0x00000001)
+[PASS] Test 78: rvalid=1 after read  (got 0x00000001)
+[PASS] Test 79: arready=0 when rvalid=1  (got 0x00000000)
+[PASS] Test 80: rvalid cleared after rready  (got 0x00000000)
+[PASS] Test 81: arready=1 when rvalid=0  (got 0x00000001)
+
+===== TEST GROUP 8: Unknown Address =====
+[PASS] Test 82: unknown addr 0x60 -> FFFFFFFF  (got 0xffffffff)
+[PASS] Test 83: unknown addr 0xAA -> FFFFFFFF  (got 0xffffffff)
+
+========================================
+  Total: 83  Passed: 83  Failed: 0
+  *** ALL TESTS PASSED ***
+========================================
+
+$finish called at time : 1825 ns : File "E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_bev_reg_ctrl.v" Line 524
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Jul 11 22:10:05 2026...

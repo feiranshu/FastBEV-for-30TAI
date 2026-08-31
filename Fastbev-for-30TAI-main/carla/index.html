@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CARLA BEV Live Drive</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, "Microsoft YaHei", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; overflow: hidden; background: #070b12; color: #edf5ff; }
+    #stage { width: 100vw; height: 100vh; position: relative; display: grid; place-items: center; }
+    video { width: 100%; height: 100%; object-fit: contain; background: #000; }
+    #hud { position: absolute; inset: 0; pointer-events: none; }
+    .panel { position: absolute; padding: 12px 16px; border: 1px solid rgba(91,210,255,.28);
+      background: rgba(3,10,20,.70); backdrop-filter: blur(8px); border-radius: 10px; }
+    #statusPanel { left: 18px; top: 18px; min-width: 270px; }
+    #help { right: 18px; bottom: 18px; line-height: 1.75; }
+    #badge { display: inline-block; padding: 4px 8px; border-radius: 999px;
+      background: #4b5563; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    #badge.live { background: #087f5b; }
+    .metric { color: #7dd3fc; font-variant-numeric: tabular-nums; }
+    #start { pointer-events: auto; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+      border: 1px solid #38bdf8; background: rgba(2,132,199,.92); color: white; font-size: 20px;
+      font-weight: 700; padding: 16px 30px; border-radius: 12px; cursor: pointer; }
+    #start:disabled { opacity: .5; cursor: wait; }
+    kbd { display: inline-block; min-width: 26px; padding: 1px 7px; text-align: center; color: white;
+      border: 1px solid #64748b; border-bottom-width: 3px; border-radius: 5px; background: #1e293b; }
+  </style>
+</head>
+<body>
+<main id="stage">
+  <video id="video" autoplay playsinline muted></video>
+  <div id="hud">
+    <section id="statusPanel" class="panel">
+      <div><span id="badge">DISCONNECTED</span></div>
+      <div style="margin-top:9px">视频：<span id="videoStats" class="metric">--</span></div>
+      <div>控制链路：<span id="controlState" class="metric">--</span></div>
+      <div>仿真性能：<span id="simState" class="metric">--</span></div>
+      <div>车速：<span id="speedState" class="metric">--</span></div>
+      <div>档位：<span id="gear" class="metric">D</span></div>
+      <div>视角：<span id="view" class="metric">LONG LOW CHASE</span></div>
+      <div>六相机：<span id="sixCamState" class="metric">等待完整批次</span></div>
+      <div>开发板链路：<span id="gatewayState" class="metric">OFFLINE</span></div>
+      <div>推理结果：<span id="resultState" class="metric">--</span></div>
+      <div>检测框：<span id="overlayState" class="metric">等待结果</span></div>
+    </section>
+    <section id="help" class="panel">
+      <div><kbd>W</kbd> 加速　<kbd>S</kbd> 制动</div>
+      <div><kbd>A</kbd>/<kbd>D</kbd> 转向　<kbd>Space</kbd> 手刹</div>
+      <div><kbd>Q</kbd> 前进/倒车　<kbd>C</kbd> 切换视角</div>
+    </section>
+    <button id="start">启动实时驾驶</button>
+  </div>
+</main>
+<script>
+  const video = document.querySelector('#video');
+  const startButton = document.querySelector('#start');
+  const badge = document.querySelector('#badge');
+  const videoStats = document.querySelector('#videoStats');
+  const controlState = document.querySelector('#controlState');
+  const gear = document.querySelector('#gear');
+  const view = document.querySelector('#view');
+  const sixCamState = document.querySelector('#sixCamState');
+  const gatewayState = document.querySelector('#gatewayState');
+  const resultState = document.querySelector('#resultState');
+  const simState = document.querySelector('#simState');
+  const speedState = document.querySelector('#speedState');
+  const overlayState = document.querySelector('#overlayState');
+  const viewNames = ['LONG LOW CHASE', 'RACE CHASE', 'MANUAL CONTROL'];
+  const keys = {w:false, a:false, s:false, d:false, space:false};
+  let reverse = false;
+  let viewIndex = 0;
+  let sequence = 0;
+  let pc = null;
+  let dc = null;
+  let controlTimer = null;
+  let statsTimer = null;
+  let lastFrames = 0;
+  let lastStatsAt = performance.now();
+
+  function clearKeys() {
+    for (const key of Object.keys(keys)) keys[key] = false;
+    sendControl();
+  }
+
+  function sendControl() {
+    if (!dc || dc.readyState !== 'open') return;
+    dc.send(JSON.stringify({
+      type: 'control', seq: ++sequence, client_ms: Date.now(),
+      keys, reverse, view_index: viewIndex
+    }));
+  }
+
+  function waitIceComplete(peer) {
+    if (peer.iceGatheringState === 'complete') return Promise.resolve();
+    return new Promise(resolve => {
+      function check() {
+        if (peer.iceGatheringState === 'complete') {
+          peer.removeEventListener('icegatheringstatechange', check);
+          resolve();
+        }
+      }
+      peer.addEventListener('icegatheringstatechange', check);
+    });
+  }
+
+  async function updateStats() {
+    if (!pc) return;
+    const reports = await pc.getStats();
+    for (const report of reports.values()) {
+      if (report.type === 'inbound-rtp' && (report.kind === 'video' || report.mediaType === 'video')) {
+        const now = performance.now();
+        const elapsed = Math.max(.001, (now - lastStatsAt) / 1000);
+        const fps = (report.framesDecoded - lastFrames) / elapsed;
+        lastFrames = report.framesDecoded;
+        lastStatsAt = now;
+        videoStats.textContent = `${fps.toFixed(1)} FPS · 丢包 ${report.packetsLost || 0}`;
+      }
+    }
+  }
+
+  async function updateBackendStatus() {
+    try {
+      const response = await fetch('/status', {cache:'no-store'});
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const state = await response.json();
+      const batch = state.batch || {};
+      const edge = state.edge || {};
+      const perf = state.performance || {};
+      const overlay = edge.overlay || {};
+      simState.textContent = `${Number(perf.sim_fps || 0).toFixed(1)} FPS · tick P95 ${Number(perf.tick_ms_p95 || 0).toFixed(0)} ms · ${perf.display_resolution || '--'}`;
+      speedState.textContent = `${Number(perf.speed_kmh || 0).toFixed(1)} / ${Number(perf.max_speed_kmh || 0).toFixed(0)} km/h`;
+      if (batch.frame_id >= 0) {
+        const mib = Number(batch.bytes || 0) / 1048576;
+        sixCamState.textContent = `frame ${batch.frame_id} · ${mib.toFixed(2)} MiB · ${Number(batch.encode_ms || 0).toFixed(0)} ms`;
+      } else {
+        sixCamState.textContent = '等待完整批次';
+      }
+      gatewayState.textContent = edge.gateway_connected ? `ONLINE · ${edge.gateway_peer || ''}` : 'OFFLINE';
+      if (edge.result_frame_id !== null && edge.result_frame_id !== undefined) {
+        const age = edge.result_age_seconds === null ? '--' : `${Number(edge.result_age_seconds).toFixed(1)}s前`;
+        const rtt = edge.gateway_roundtrip_ms == null ? '--' : Number(edge.gateway_roundtrip_ms).toFixed(0);
+        resultState.textContent = `frame ${edge.result_frame_id} · ${edge.object_count}框 · 推理 ${Number(edge.inference_ms || 0).toFixed(0)} ms · 往返 ${rtt} ms · ${age}`;
+        overlayState.textContent = edge.overlay_accepted
+          ? `${overlay.box_count || 0}框 · ${Number(overlay.capture_age_ms || 0).toFixed(0)} ms龄期 · ${overlay.visible ? '保持至下次结果' : '当前结果无框'}`
+          : `已丢弃 · ${edge.overlay_reason || overlay.last_reason || '--'} · 保留上一有效结果`;
+      } else {
+        resultState.textContent = '--';
+        overlayState.textContent = '等待结果';
+      }
+    } catch (error) {
+      sixCamState.textContent = '状态接口不可用';
+      gatewayState.textContent = 'UNKNOWN';
+    }
+  }
+
+  async function start() {
+    startButton.disabled = true;
+    startButton.textContent = '连接中…';
+    pc = new RTCPeerConnection({iceServers: []});
+    pc.addTransceiver('video', {direction:'recvonly'});
+    dc = pc.createDataChannel('control', {ordered:false, maxRetransmits:0});
+
+    dc.onopen = () => {
+      controlState.textContent = 'ONLINE · 30 Hz';
+      controlTimer = setInterval(sendControl, 1000/30);
+      sendControl();
+    };
+    dc.onclose = () => controlState.textContent = 'OFFLINE';
+    pc.ontrack = event => {
+      video.srcObject = event.streams.length ? event.streams[0] : new MediaStream([event.track]);
+    };
+    pc.onconnectionstatechange = () => {
+      const state = pc.connectionState.toUpperCase();
+      badge.textContent = state;
+      badge.classList.toggle('live', pc.connectionState === 'connected');
+      if (pc.connectionState === 'connected') {
+        startButton.style.display = 'none';
+        video.focus();
+      }
+    };
+
+    await pc.setLocalDescription(await pc.createOffer());
+    await waitIceComplete(pc);
+    const response = await fetch('/offer', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({sdp:pc.localDescription.sdp, type:pc.localDescription.type})
+    });
+    if (!response.ok) throw new Error(await response.text());
+    const answer = await response.json();
+    await pc.setRemoteDescription(answer);
+    statsTimer = setInterval(updateStats, 1000);
+  }
+
+  startButton.addEventListener('click', () => start().catch(error => {
+    console.error(error);
+    badge.textContent = 'FAILED';
+    startButton.disabled = false;
+    startButton.textContent = '连接失败，点击重试';
+  }));
+
+  updateBackendStatus();
+  const backendStatusTimer = setInterval(updateBackendStatus, 1000);
+
+  window.addEventListener('keydown', event => {
+    const key = event.key.toLowerCase();
+    if (['w','a','s','d','q','c',' '].includes(key)) event.preventDefault();
+    if (key in keys) keys[key] = true;
+    if (key === ' ') keys.space = true;
+    if (!event.repeat && key === 'q') { reverse = !reverse; gear.textContent = reverse ? 'R' : 'D'; }
+    if (!event.repeat && key === 'c') { viewIndex = (viewIndex + 1) % viewNames.length; view.textContent = viewNames[viewIndex]; }
+    sendControl();
+  });
+  window.addEventListener('keyup', event => {
+    const key = event.key.toLowerCase();
+    if (key in keys) keys[key] = false;
+    if (key === ' ') keys.space = false;
+    sendControl();
+  });
+  window.addEventListener('blur', clearKeys);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clearKeys(); });
+  window.addEventListener('beforeunload', () => {
+    clearInterval(controlTimer); clearInterval(statsTimer); clearInterval(backendStatusTimer); clearKeys();
+    if (pc) pc.close();
+  });
+</script>
+</body>
+</html>

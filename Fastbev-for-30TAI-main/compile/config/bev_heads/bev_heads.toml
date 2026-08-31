@@ -1,0 +1,44 @@
+[parse]
+net_name = "bev_heads"
+framework = "onnx"
+network = "./fmodel/bev_heads/bev_heads.onnx"
+inputs = [1, 64, 512, 512]
+inputs_layout = "FD"
+inputs_dtype = "fp32"
+pre_method = "nop"
+pre_mean = "nop"
+pre_scale = "nop"
+channel_swap = "nop"
+target = "zhuge"
+jr_path = "../deploy/imodel/bev_heads"
+log_path = "./logs/bev_heads/parse"
+
+[optimize]
+target = "zhuge"
+jr_path = "../deploy/imodel/bev_heads"
+json = "../deploy/imodel/bev_heads/bev_heads_parsed.json"
+raw = "../deploy/imodel/bev_heads/bev_heads_parsed.raw"
+log_path = "./logs/bev_heads/optimize"
+
+[quantize]
+target = "zhuge"
+qdtype = "fp16"
+per = "channel"
+saturation = "kld"
+jr_path = "../deploy/imodel/bev_heads"
+json = "../deploy/imodel/bev_heads/bev_heads_optimized.json"
+raw = "../deploy/imodel/bev_heads/bev_heads_optimized.raw"
+log_path = "./logs/bev_heads/quantize"
+
+[adapt]
+target = "zhuge"
+jr_path = "../deploy/imodel/bev_heads"
+json = "../deploy/imodel/bev_heads/bev_heads_quantized.json"
+raw = "../deploy/imodel/bev_heads/bev_heads_quantized.raw"
+log_path = "./logs/bev_heads/adapt"
+
+[generate]
+jr_path = "../deploy/imodel/bev_heads"
+json = "../deploy/imodel/bev_heads/bev_heads_adapted.json"
+raw = "../deploy/imodel/bev_heads/bev_heads_adapted.raw"
+log_path = "./logs/bev_heads/generate"

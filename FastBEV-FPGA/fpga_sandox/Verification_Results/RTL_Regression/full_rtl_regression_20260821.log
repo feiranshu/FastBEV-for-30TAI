@@ -1,0 +1,20 @@
+NETWORK_INTERFACE_PASS
+part1_output=FP32 NHWC [6,120,160,64], bytes=29491200
+part3_conv256_input=value362 FP16 [1,16,200,200,16], bytes=20480000
+mapping=global_channel=z*64+c; global_cblk16=z*4+cblk16
+raw_md5_part1=6231212a2e5e73ea183924dcc178f828
+raw_md5_part3=9e1a890666a57554005ddb3ba89cdaec
+LUT_RTL_CONTRACT_PASS
+entries=160000 valid=156125 bytes=1280000
+sha256=84187065e7fa9b7c2dd7aecf7992770bfa4f21b809696f14f9e0ee610a566383
+format=little-endian int16[4]: cam_id,u,v,pad; order=ZYX
+FastBEV v2 LUT verification passed
+TEST_PASS: tb_fp32_tf32_fp16
+TEST_PASS: tb_fp32_add
+NHWC_FP16: cycles=218 lut_reads=1 feature_reads=16 writes=16 rd_stall=17 wr_stall=16
+TEST_PASS: tb_lut_engine_nhwc_fp16
+TEST_PASS: tb_bev_accel_top_cdc
+LUT_HEX_PASS entries=160000
+FULL_FRAME: cycles=5943752 lut_reads=20000 feature_reads=624500 writes=320000
+TEST_PASS: tb_lut_engine_full_frame
+ALL_RTL_CHECKS_PASS

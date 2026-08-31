@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle FastBEV Live Viewer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="viewer-panel">
+      <header class="toolbar">
+        <div class="brand">Vehicle Viewer</div>
+        <button id="prevFrame" title="上一帧">‹</button>
+        <select id="frameSelect" aria-label="Frame"></select>
+        <button id="nextFrame" title="下一帧">›</button>
+        <button id="playPause">播放</button>
+        <button id="liveSim">实时模拟</button>
+        <label class="fps">
+          FPS
+          <input id="fpsInput" type="number" min="1" max="30" step="1" value="10">
+        </label>
+        <label class="threshold">
+          Score &gt; <span id="thresholdValue">0.600</span>
+          <input id="scoreThreshold" type="range" min="0" max="1" step="0.001" value="0.600">
+        </label>
+        <button id="refreshFrames">刷新</button>
+        <span id="status" class="status">Loading...</span>
+      </header>
+
+      <div class="stage-wrap">
+        <div id="stage" class="stage">
+          <canvas id="viewerCanvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <aside class="details">
+      <h1>Detection</h1>
+      <div id="summary" class="summary">点击 BEV 或相机画面中的检测框。</div>
+      <section class="class-filter">
+        <div class="class-filter-head">
+          <span>类别筛选</span>
+          <button id="selectAllClasses" type="button">全选</button>
+          <button id="clearAllClasses" type="button">清空</button>
+        </div>
+        <div id="classFilters" class="class-filters"></div>
+      </section>
+      <dl id="detailTable" class="detail-table"></dl>
+      <div class="raw-block">
+        <div class="raw-title">Raw result line</div>
+        <pre id="rawLine">-</pre>
+      </div>
+      <div class="hint">
+        Hover 高亮，Click 锁定。相机框使用投影线段包围区域做命中测试，BEV 框使用四边形命中测试。
+      </div>
+    </aside>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+# FastBEV CARLA runtime configuration.
+# The deployed CARLA Part3 model starts its Conv path at view(15), input v251.
+# Part2 hardware must quantize for the CARLA Decoder base scale 0.07155427.
+
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+extractor:
+  dir: ./imodel/extractor/carla
+  stage: g
+  run_backend: zg330
+
+decoder:
+  dir: ./imodel/decoder/carla
+  stage: g
+  run_backend: zg330
+
+dataset:
+  imageDir: ./io/input/data/dataset_info.json
+  lutDir: ./io/input/fastbev_lut_table.bin
+  boxDir: ./io/output/result
+  pngDir: ./io/output/png
+  paraDir: ./io/output/parameter
+  logDir: ./io/log
+  camera: 6
+  imageW: 176
+  imageH: 64
+
+bev:
+  bevx: 200
+  bevy: 200
+  bevz: 4
+  channels: 64
+  fp32Bytes: 4
+
+nms:
+  # CARLA Part3 currently quantizes the Sigmoid output with scale
+  # 0.0014769769, so signed INT8 scores saturate near 0.1876.
+  threshold: 0.185
+  # Lower IoU thresholds make same-class duplicate suppression more aggressive.
+  threslist: [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.05, 0.05, 0.02]
+  # Same-class BEV center-distance suppression for motorcycle/pedestrian.
+  pedestrian_motorcycle_center_distance_m: 3.0
+  # Cross-class rotated-IoU suppression for classes 0-4, 6 and 7.
+  cross_class_iou_threshold: 0.20

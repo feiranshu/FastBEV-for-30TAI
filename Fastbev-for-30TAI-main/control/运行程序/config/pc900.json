@@ -1,0 +1,38 @@
+{
+  "usb_vid": "1345",
+  "usb_pid": "4004",
+  "expected_axis_count": 4,
+  "minimum_button_count": 8,
+  "axes": {
+    "steering": {
+      "index": 0,
+      "center": 0.0,
+      "left": -1.0,
+      "right": 0.99997,
+      "engage_threshold": 0.24,
+      "release_threshold": 0.13
+    },
+    "throttle": {
+      "index": 2,
+      "released": 1.0,
+      "pressed": 0.45,
+      "engage_threshold": 0.48,
+      "release_threshold": 0.30,
+      "high_speed_threshold": 0.76
+    },
+    "brake": {
+      "index": 1,
+      "released": 0.0,
+      "pressed": 0.54,
+      "stop_threshold": 0.25
+    }
+  },
+  "buttons": {
+    "start_toggle": 8,
+    "capture": 4
+  },
+  "watchdog_timeout_s": 2.0,
+  "reconnect_interval_s": 0.2,
+  "poll_hz": 50,
+  "note": "Only the calibrated PC900 wheel and pedals are used. No shifter is used. Throttle drives forward only; brake overrides throttle. Button 8 toggles arm/lock and button 4 captures one six-camera frame."
+}

@@ -1,0 +1,55 @@
+[parse]
+net_name = "fastbev_part1_vehicle_fp16"
+framework = "onnx"
+inputs = [ 6, 480, 640, 3]
+inputs_layout = "NHWC"
+inputs_dtype = "fp32"
+pre_method = "nop"
+pre_scale = [ 58.395, 57.12, 57.375 ]
+pre_mean = [ 123.675, 116.28, 103.53 ]
+channel_swap = [ 2, 1, 0 ]
+network = "./fmodel/extractor/vehicle/fastbev_part1_vehicle.onnx"
+jr_path = "../deploy/imodel/extractor/vehicle_fp16"
+target = "zhuge"
+log_path = "./logs/extractor/vehicle_fp16/parse"
+
+[optimize]
+target = "zhuge"
+json = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_parsed.json"
+raw = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_parsed.raw"
+jr_path = "../deploy/imodel/extractor/vehicle_fp16"
+log_path = "./logs/extractor/vehicle_fp16/optimize"
+
+[quantize]
+saturation = "kld"
+json = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_optimized.json"
+raw = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_optimized.raw"
+jr_path = "../deploy/imodel/extractor/vehicle_fp16"
+per = "channel"
+target = "zhuge"
+qdtype = "fp16"
+log_path = "./logs/extractor/vehicle_fp16/quantize"
+
+[adapt]
+target = "zhuge"
+json = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_quantized.json"
+raw = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_quantized.raw"
+jr_path = "../deploy/imodel/extractor/vehicle_fp16"
+log_path = "./logs/extractor/vehicle_fp16/adapt"
+
+[generate]
+json = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_adapted.json"
+raw = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_adapted.raw"
+jr_path = "../deploy/imodel/extractor/vehicle_fp16"
+log_path = "./logs/extractor/vehicle_fp16/generate"
+
+[run]
+log_time = true
+log_io = false
+dump_format = "SFB"
+json = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_ZG.json"
+raw = "../deploy/imodel/extractor/vehicle_fp16/fastbev_part1_vehicle_fp16_ZG.raw"
+input = "./test/part1_input.ftmp"
+backends = "ZG330,socket://zg330aiu@192.168.125.166:9981?npu=0x40000000&dma=0x80000000;Host"
+log_path = "./test/testlog/vehicle_fp16"
+dump_output = true

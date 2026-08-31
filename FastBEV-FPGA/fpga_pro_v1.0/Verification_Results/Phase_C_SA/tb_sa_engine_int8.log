@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Jul 11 22:09:14 2026
+# Process ID         : 30388
+# Current directory  : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_sa_engine
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_sa_engine_int8_sim/xsim_script.tcl}
+# Log file           : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_sa_engine/xsim.log
+# Journal file       : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_sa_engine\xsim.jou
+# Running On         : feiranshu
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i9-13900H
+# CPU Frequency      : 2995 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 34016 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36164 MB
+# Available Virtual  : 16460 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_sa_engine_int8_sim/xsim_script.tcl
+# xsim {tb_sa_engine_int8_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+*** PASS *** sa_engine_int8 identity signed
+*** PASS *** sa_engine_int8 integer translation
+*** PASS *** sa_engine_int8 fractional bilinear
+*** PASS *** sa_engine_int8 signed fractional affine pipeline
+*** PASS *** sa_engine_int8 out-of-bounds zero
+*** PASS *** sa_engine_int8 all checks
+$finish called at time : 104835 ns : File "E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_sa_engine/tb_sa_engine_int8.sv" Line 494
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Jul 11 22:09:16 2026...

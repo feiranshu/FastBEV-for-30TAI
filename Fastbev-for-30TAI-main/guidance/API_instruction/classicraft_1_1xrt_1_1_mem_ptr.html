@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Class MemPtr &#8212; Icraft XRT 3.33.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_cppapi/classicraft_1_1xrt_1_1_mem_ptr';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Class MemRegion" href="classicraft_1_1xrt_1_1_mem_region.html" />
+    <link rel="prev" title="Class MemManagerNode" href="classicraft_1_1xrt_1_1_mem_manager_node.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Icraft XRT 3.33.1.0 文档</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Icraft XRT
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="api_root.html">C++ API reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft.html">Namespace icraft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xir.html">Namespace icraft::xir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xrt.html">Namespace icraft::xrt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xrt__utils.html">Namespace icraft::xrt::utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_buyi_device.html">Class BuyiDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_buyi_device_node.html">Class BuyiDeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_default_mem_manager.html">Class DefaultMemManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_default_mem_manager_node.html">Class DefaultMemManagerNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device.html">Class Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device_node.html">Class DeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device_registry.html">Class DeviceRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_device.html">Class HostDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_device_node.html">Class HostDeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_mem_region.html">Class HostMemRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_mem_region_node.html">Class HostMemRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk.html">Class MemChunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk_node.html">Class MemChunkNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_manager.html">Class MemManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_manager_node.html">Class MemManagerNode</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Class MemPtr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html">Class MemRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region_node.html">Class MemRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_m_m_u_map_table.html">Class MMUMapTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_m_m_u_map_table_node.html">Class MMUMapTableNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_reg_region.html">Class RegRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_reg_region_node.html">Class RegRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_seg_table.html">Class SegTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_seg_table_node.html">Class SegTableNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_session.html">Class Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_session_node.html">Class SessionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_tensor.html">Class Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_tensor_node.html">Class TensorNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1utils_1_1_url_parser.html">Class UrlParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_z_g330_device.html">Class ZG330Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_z_g330_device_node.html">Class ZG330DeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ae1a38cb593f243cb21e611d484537628.html">Function icraft::xrt::operator+(const MemPtr&amp;, uint64_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ac256b08b4de939f08f66ef2da848cd8e.html">Function icraft::xrt::operator+(uint64_t, const MemPtr&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a288b7ee752d26955ddfe0921eebc7906.html">Function icraft::xrt::operator-(const MemPtr&amp;, uint64_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a8b74090dfb3075d41129de3976a24270.html">Function icraft::xrt::operator-(const MemPtr&amp;, const MemPtr&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1aa01f01f51fd179f0d50ed1ea67de9d96.html">Function icraft::xrt::operator&lt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1adc331dcd1e69bc979cf076cbda4e8580.html">Function icraft::xrt::operator&lt;=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ae9e08156e1225760d595f320483e0d7b.html">Function icraft::xrt::operator&gt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a2089c7a554ac1b86c3c9944d353251d5.html">Function icraft::xrt::operator&gt;=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a01ca57d0ab88d81862d5d5210f92222f.html">Template Function icraft::xrt::utils::WaitUntil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_backend_8h_1affe7caed7c597b3591d53f7af539c17e.html">Define XRT_BACKEND_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_buyi__device_8h_1a2b67b900559a574ba875fa2a68e6d678.html">Define XRT_BUYI_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_device_8h_1ae0548dc6d8da27dde92f98f152854253.html">Define XRT_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_host__device_8h_1ace0c3cb27cfe14fda1eb036279836349.html">Define XRT_HOST_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_session_8h_1a9436b2f9bb5a3b3592dff0d9dcd1c1dd.html">Define XRT_SESSION_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_tensor_8h_1a960c4b8b0b7c90297ba211605833a9ff.html">Define XRT_TENSOR_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_zg330__device_8h_1a41c2f8bbd231401935b6d5aeeb040c1e.html">Define XRT_ZG330_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_device_8h_1a85bf30b5045c0b4dfd06d1d7fa0177db.html">Typedef icraft::xrt::FChunkDeleter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_session_8h_1a4ac58eb09e80088914f526b5d1fd51ca.html">Typedef icraft::xrt::TimeProfileResults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_autosummary/xrt.html">Python API reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">更新日志</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../changelogs/change_logs.html">更新日志</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Class MemPtr</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-relationships">Inheritance Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-documentation">Class Documentation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="class-memptr">
+<span id="exhale-class-classicraft-1-1xrt-1-1-mem-ptr"></span><h1>Class MemPtr<a class="headerlink" href="#class-memptr" title="此标题的永久链接">#</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_icraft-xrt_core_device.h.html#file-icraft-xrt-core-device-h"><span class="std std-ref">File device.h</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="此标题的永久链接">#</a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="此标题的永久链接">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">icraft::xir::HandleBase&lt;</span> <span class="pre">MemPtr,</span> <span class="pre">Handle,</span> <span class="pre">MemPtrNode</span> <span class="pre">&gt;</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="此标题的永久链接">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6MemPtrE">
+<span id="_CPPv3N6icraft3xrt6MemPtrE"></span><span id="_CPPv2N6icraft3xrt6MemPtrE"></span><span id="icraft::xrt::MemPtr"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemPtr</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">icraft</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">xir</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">HandleBase</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N6icraft3xrt6MemPtrE" title="icraft::xrt::MemPtr"><span class="n"><span class="pre">MemPtr</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">Handle</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">MemPtrNode</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N6icraft3xrt6MemPtrE" title="永久链接至目标">#</a><br /></dt>
+<dd><p>表示XRT中的内存指针 </p>
+<p>表示XRT中内存指针的引用类型 </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6MemPtr6MemPtrEv">
+<span id="_CPPv3N6icraft3xrt6MemPtr6MemPtrEv"></span><span id="_CPPv2N6icraft3xrt6MemPtr6MemPtrEv"></span><span id="icraft::xrt::MemPtr::MemPtr"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1afc008ca98aa5a96f618a1b650aa5ca73"></span><span class="sig-name descname"><span class="n"><span class="pre">MemPtr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N6icraft3xrt6MemPtr6MemPtrEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>默认构造函数 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6MemPtr6MemPtrEPv8uint64_t">
+<span id="_CPPv3N6icraft3xrt6MemPtr6MemPtrEPv8uint64_t"></span><span id="_CPPv2N6icraft3xrt6MemPtr6MemPtrEPv8uint64_t"></span><span id="icraft::xrt::MemPtr::MemPtr__voidP.uint64_t"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1a2b60dadf9b8d5679a26e1996ca7ddf4d"></span><span class="sig-name descname"><span class="n"><span class="pre">MemPtr</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cptr</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6MemPtr6MemPtrEPv8uint64_t" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数，构造一个PtrType::BOTH类型的MemPtr. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cptr</strong> – C指针的值 </p></li>
+<li><p><strong>addr</strong> – 物理地址的值 </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6MemPtr6MemPtrEPv">
+<span id="_CPPv3N6icraft3xrt6MemPtr6MemPtrEPv"></span><span id="_CPPv2N6icraft3xrt6MemPtr6MemPtrEPv"></span><span id="icraft::xrt::MemPtr::MemPtr__voidP"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1a8addaf88df7cb6cc561001b551c5570f"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemPtr</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6MemPtr6MemPtrEPv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数，构造一个PtrType::CPTR类型的MemPtr. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cptr</strong> – C指针的值 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6MemPtr6MemPtrE8uint64_t">
+<span id="_CPPv3N6icraft3xrt6MemPtr6MemPtrE8uint64_t"></span><span id="_CPPv2N6icraft3xrt6MemPtr6MemPtrE8uint64_t"></span><span id="icraft::xrt::MemPtr::MemPtr__uint64_t"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1abfc215e64d72c146616a18fc2e770fdc"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MemPtr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">addr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6MemPtr6MemPtrE8uint64_t" title="永久链接至目标">#</a><br /></dt>
+<dd><p>构造函数，构造一个PtrType::ADDR类型的MemPtr. </p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>addr</strong> – 物理地址的值 </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6MemPtr6isNullEv">
+<span id="_CPPv3NK6icraft3xrt6MemPtr6isNullEv"></span><span id="_CPPv2NK6icraft3xrt6MemPtr6isNullEv"></span><span id="icraft::xrt::MemPtr::isNullC"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1abada6dfb33f4cbafe1e443a5cf8dc8d0"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isNull</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6MemPtr6isNullEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>检查该MemPtr是否是空指针 </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6MemPtr4cptrEv">
+<span id="_CPPv3NK6icraft3xrt6MemPtr4cptrEv"></span><span id="_CPPv2NK6icraft3xrt6MemPtr4cptrEv"></span><span id="icraft::xrt::MemPtr::cptrC"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1ab558a3bee679789e875401c03a132d76"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cptr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6MemPtr4cptrEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该MemPtr的C指针. </p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp">如果MemPtr为PtrType::ADDR类型时，抛出异常</span></span> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6MemPtr4addrEv">
+<span id="_CPPv3NK6icraft3xrt6MemPtr4addrEv"></span><span id="_CPPv2NK6icraft3xrt6MemPtr4addrEv"></span><span id="icraft::xrt::MemPtr::addrC"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1a563a8036b314bf3a955bb0c1546e7e30"></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6MemPtr4addrEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该MemPtr的物理地址. </p>
+<dl class="field-list simple">
+<dt class="field-odd">抛出<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><span class="cpp-expr sig sig-inline cpp">如果MemPtr为PtrType::CPTR类型时，抛出异常</span></span> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK6icraft3xrt6MemPtr5ptypeEv">
+<span id="_CPPv3NK6icraft3xrt6MemPtr5ptypeEv"></span><span id="_CPPv2NK6icraft3xrt6MemPtr5ptypeEv"></span><span id="icraft::xrt::MemPtr::ptypeC"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1aefff67898178b0276b9e6a3030a63385"></span><span class="n"><span class="pre">PtrType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ptype</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6icraft3xrt6MemPtr5ptypeEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>获取该MemPtr的类型 </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6icraft3xrt6MemPtr7NullPtrEv">
+<span id="_CPPv3N6icraft3xrt6MemPtr7NullPtrEv"></span><span id="_CPPv2N6icraft3xrt6MemPtr7NullPtrEv"></span><span id="icraft::xrt::MemPtr::NullPtr"></span><span class="target" id="classicraft_1_1xrt_1_1_mem_ptr_1ad9f7f107344de73596cfca9b2491ee79"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N6icraft3xrt6MemPtrE" title="icraft::xrt::MemPtr"><span class="n"><span class="pre">MemPtr</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NullPtr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6icraft3xrt6MemPtr7NullPtrEv" title="永久链接至目标">#</a><br /></dt>
+<dd><p>创建一个空指针. </p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>在XRT中，当且仅当MemPtr为PtrType::CPTR且cptr的值为nullptr时，认为这个MemPtr为空指针 </p>
+</div>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="classicraft_1_1xrt_1_1_mem_manager_node.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">Class MemManagerNode</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classicraft_1_1xrt_1_1_mem_region.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Class MemRegion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance-relationships">Inheritance Relationships</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-documentation">Class Documentation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： chenghongxu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, FMSH.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

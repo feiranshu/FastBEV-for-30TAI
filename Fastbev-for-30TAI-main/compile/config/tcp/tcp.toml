@@ -1,0 +1,55 @@
+[parse]
+net_name = "tcp"
+framework = "onnx"
+network = "./fmodel/tcp/tcp.onnx"
+inputs = [[1, 256, 900, 3], [1, 9]]
+inputs_layout = "FD;FD"
+inputs_dtype = "fp32;fp32"
+pre_method = "nop;nop"
+pre_mean = "nop;nop"
+pre_scale = "nop;nop"
+channel_swap = "nop;nop"
+target = "zhuge"
+jr_path = "../deploy/imodel/tcp"
+log_path = "./logs/tcp/parse"
+
+[optimize]
+target = "zhuge"
+jr_path = "../deploy/imodel/tcp"
+json = "../deploy/imodel/tcp/tcp_parsed.json"
+raw = "../deploy/imodel/tcp/tcp_parsed.raw"
+log_path = "./logs/tcp/optimize"
+
+[quantize]
+target = "zhuge"
+qdtype = "fp16"
+per = "channel"
+saturation = "kld"
+jr_path = "../deploy/imodel/tcp"
+json = "../deploy/imodel/tcp/tcp_optimized.json"
+raw = "../deploy/imodel/tcp/tcp_optimized.raw"
+log_path = "./logs/tcp/quantize"
+
+[adapt]
+target = "zhuge"
+jr_path = "../deploy/imodel/tcp"
+json = "../deploy/imodel/tcp/tcp_quantized.json"
+raw = "../deploy/imodel/tcp/tcp_quantized.raw"
+log_path = "./logs/tcp/adapt"
+
+[generate]
+jr_path = "../deploy/imodel/tcp"
+json = "../deploy/imodel/tcp/tcp_adapted.json"
+raw = "../deploy/imodel/tcp/tcp_adapted.raw"
+log_path = "./logs/tcp/generate"
+
+[run]
+log_time = true
+log_io = false
+dump_format = "SFB"
+backends = "ZG330,socket://zg330aiu@192.168.125.166:9981?npu=0x40000000&dma=0x80000000;Host"
+json = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_ZG.json"
+raw = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_ZG.raw"
+input = "./test/matrixvt_input.ftmp"
+log_path = "./test/testlog"
+dump_output = true

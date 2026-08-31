@@ -1,0 +1,23 @@
+{
+  "serial_port": "COM4",
+  "baudrate": 115200,
+  "addresses": [1, 2, 3, 4],
+  "left_addresses": [1, 3],
+  "right_addresses": [2, 4],
+  "forward_directions": {
+    "1": 0,
+    "2": 1,
+    "3": 0,
+    "4": 1
+  },
+  "wheel_diameter_m": 0.08,
+  "effective_track_width_m": 0.39,
+  "max_motor_rpm": 30,
+  "initial_speed_mps": 0.04,
+  "normal_speed_mps": 0.08,
+  "turn_rate_radps": 0.8,
+  "acceleration": 200,
+  "stage_settle_s": 0.1,
+  "trigger_settle_s": 0.2,
+  "note": "The serial port must match the Windows USB-SERIAL CH340 port shown in Device Manager. Wheel direction mapping comes from the verified demo handoff. Keep max_motor_rpm at 30 or lower until ground tests are complete. The track width is provisional."
+}

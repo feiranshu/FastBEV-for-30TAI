@@ -1,0 +1,55 @@
+[parse]
+net_name = "matrixvt_nuscenes_fp16"
+framework = "onnx"
+network = "./fmodel/matrixvt/nuscenes/matrixvt_nuscenes.onnx"
+inputs = [6, 3, 256, 704]
+inputs_layout = "FD"
+inputs_dtype = "fp32"
+pre_method = "nop"
+pre_mean = "nop"
+pre_scale = "nop"
+channel_swap = "nop"
+target = "zhuge"
+jr_path = "../deploy/imodel/matrixvt/nuscenes"
+log_path = "./logs/matrixvt/nuscenes/parse"
+
+[optimize]
+target = "zhuge"
+jr_path = "../deploy/imodel/matrixvt/nuscenes"
+json = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_parsed.json"
+raw = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_parsed.raw"
+log_path = "./logs/matrixvt/nuscenes/optimize"
+
+[quantize]
+target = "zhuge"
+qdtype = "fp16"
+per = "channel"
+saturation = "kld"
+jr_path = "../deploy/imodel/matrixvt/nuscenes"
+json = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_optimized.json"
+raw = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_optimized.raw"
+log_path = "./logs/matrixvt/nuscenes/quantize"
+
+[adapt]
+target = "zhuge"
+jr_path = "../deploy/imodel/matrixvt/nuscenes"
+json = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_quantized.json"
+raw = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_quantized.raw"
+log_path = "./logs/matrixvt/nuscenes/adapt"
+
+[generate]
+jr_path = "../deploy/imodel/matrixvt/nuscenes"
+json = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_adapted.json"
+raw = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_adapted.raw"
+log_path = "./logs/matrixvt/nuscenes/generate"
+
+[run]
+log_time = true
+log_io = false
+dump_format = "SFB"
+backends = "ZG330,socket://zg330aiu@192.168.125.166:9981?npu=0x40000000&dma=0x80000000;Host"
+json = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_ZG.json"
+raw = "../deploy/imodel/matrixvt/nuscenes/matrixvt_nuscenes_fp16_ZG.raw"
+input = "./test/matrixvt_input.ftmp"
+log_path = "./test/testlog"
+dump_output = true

@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Fri Jul 10 16:48:37 2026
+# Process ID         : 11416
+# Current directory  : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_lut_engine
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_lut_engine_int8_sim/xsim_script.tcl}
+# Log file           : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_lut_engine/xsim.log
+# Journal file       : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_lut_engine\xsim.jou
+# Running On         : feiranshu
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i9-13900H
+# CPU Frequency      : 2995 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 34016 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36164 MB
+# Available Virtual  : 17427 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_lut_engine_int8_sim/xsim_script.tcl
+# xsim {tb_lut_engine_int8_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+*** PASS *** lut_engine_int8 HISTORY_CONTIG
+*** PASS *** lut_engine_int8 FUSED_CURRENT Part3 layout
+*** PASS *** lut_engine_int8 all checks
+$finish called at time : 10035 ns : File "E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_lut_engine/tb_lut_engine_int8.sv" Line 395
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Jul 10 16:48:40 2026...

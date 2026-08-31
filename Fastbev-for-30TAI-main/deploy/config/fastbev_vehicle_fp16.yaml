@@ -1,0 +1,35 @@
+# FastBEV Vehicle FP16 single-frame configuration.
+# Requires the Vehicle Part2 bitstream that writes 20,480,000 bytes of FP16
+# NCHWc16 data directly to Decoder view(13) input v362 Runtime PLDDR.
+
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+extractor:
+  dir: ./imodel/extractor/vehicle_fp16
+  stage: g
+  run_backend: zg330
+
+decoder:
+  dir: ./imodel/decoder/vehicle_fp16
+  stage: g
+  run_backend: zg330
+
+dataset:
+  sample_dir: ./io/input/vehicle_sample
+  camera_params: ./io/input/vehicle_camera_params.txt
+  lut: ./io/input/fastbev_vehicle_lut_table.bin
+  output_dir: ./output/vehicle_output
+
+postprocess:
+  score_threshold: 0.6
+  nms_pre: 1000
+  max_num: 50
+  nms_iou_threshold: 0.2
+
+visualize:
+  enabled: true

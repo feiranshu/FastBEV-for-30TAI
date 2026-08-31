@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Jul 11 22:11:11 2026
+# Process ID         : 30416
+# Current directory  : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_bev_accel_top_phaseF_sim/xsim_script.tcl}
+# Log file           : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/xsim.log
+# Journal file       : E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim\xsim.jou
+# Running On         : feiranshu
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i9-13900H
+# CPU Frequency      : 2995 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 34016 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36164 MB
+# Available Virtual  : 16472 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_bev_accel_top_phaseF_sim/xsim_script.tcl
+# xsim {tb_bev_accel_top_phaseF_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[INFO] frame1 history done after 108 polls
+[INFO] frame2 history done after 110 polls
+[INFO] frame3 history done after 110 polls
+[INFO] frame4 current+SA done after 382 polls
+[INFO] final Part3 layout numerical check passed
+[INFO] perf total=2131 quant=474 lut=294 sa=1363 rd_wait=50 wr_wait=23 rd_grant=166 wr_grant=81
+*** PASS *** Phase F bev_accel_top full pipeline numerical/layout/backpressure/perf
+$finish called at time : 43287 ns : File "E:/实验复现/复旦微/Fast-BEV/Fast-BEV-dev/板子端部署2.0/part2/Fast-BEV-part2-main/Fast-BEV-part2-main/src_vivado/sim/tb_bev_accel_top_phaseF.sv" Line 690
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Jul 11 22:11:13 2026...

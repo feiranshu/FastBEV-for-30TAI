@@ -1,0 +1,1382 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Tue Aug 18 18:38:42 2026
+| Host         : feiranshu running 64-bit major release  (build 9200)
+| Command      : report_methodology -file out/04_methodology_route.rpt
+| Design       : bev_edif_top
+| Device       : xc7z030ffg676-2
+| Speed File   : -2
+| Design State : Fully Routed
+------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_04_route
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 266
++-----------+----------+------------------------------------------------------------------+------------+
+| Rule      | Severity | Description                                                      | Violations |
++-----------+----------+------------------------------------------------------------------+------------+
+| CKLD-2    | Warning  | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 1          |
+| DPIR-1    | Warning  | Asynchronous driver check                                        | 132        |
+| LUTAR-1   | Warning  | LUT drives async reset alert                                     | 14         |
+| PDRC-190  | Warning  | Suboptimally placed synchronized register chain                  | 1          |
+| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal                       | 14         |
+| SYNTH-11  | Warning  | DSP output not registered                                        | 16         |
+| SYNTH-12  | Warning  | DSP input not registered                                         | 6          |
+| TIMING-4  | Warning  | Invalid primary clock redefinition on a clock tree               | 1          |
+| TIMING-9  | Warning  | Unknown CDC Logic                                                | 1          |
+| TIMING-10 | Warning  | Missing property on synchronizer                                 | 1          |
+| TIMING-18 | Warning  | Missing input or output delay                                    | 4          |
+| TIMING-27 | Warning  | Invalid primary clock on hierarchical pin                        | 2          |
+| TIMING-28 | Warning  | Auto-derived clock referenced by a timing constraint             | 6          |
+| XDCB-5    | Warning  | Runtime inefficient way to find pin objects                      | 3          |
+| REQP-1959 | Advisory | connects_SERDES_RST_driver_not_FF                                | 64         |
++-----------+----------+------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CKLD-2#1 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net PJTAG_TCK_IBUF is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): PJTAG_TCK_IBUF_inst/O, U0_ps_ai_wrap_demo/PJTAG_TCK
+Related violations: <none>
+
+DPIR-1#1 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#2 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#3 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#4 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#5 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#6 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#7 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#8 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#9 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#10 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#11 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#12 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/A[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#13 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#14 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#15 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#16 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#17 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#18 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#19 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#20 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/B[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#21 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#22 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#23 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#24 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#25 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#26 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#27 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#28 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#29 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#30 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#31 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#32 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#33 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#34 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#35 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#36 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pipe_cam_v0 input pin U_bev_accel_top/U_lut_engine/pipe_cam_v0/C[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#37 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#38 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#39 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#40 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#41 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#42 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#43 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#44 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#45 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#46 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#47 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#48 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/B[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#49 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#50 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#51 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#52 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#53 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#54 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#55 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#56 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#57 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#58 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#59 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#60 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#61 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#62 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#63 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#64 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 input pin U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2/C[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#65 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w00_int_r0 input pin U_bev_accel_top/U_sa_engine/w00_int_r0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#66 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w00_int_r0 input pin U_bev_accel_top/U_sa_engine/w00_int_r0/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#67 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#68 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#69 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#70 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#71 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#72 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#73 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#74 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#75 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#76 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#77 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#78 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#79 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#80 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#81 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#82 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#83 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w01_int_r0 input pin U_bev_accel_top/U_sa_engine/w01_int_r0/B[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#84 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#85 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#86 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#87 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#88 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#89 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#90 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#91 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#92 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#93 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#94 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#95 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#96 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#97 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#98 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#99 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#100 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w10_int_r0 input pin U_bev_accel_top/U_sa_engine/w10_int_r0/B[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#101 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#102 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#103 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#104 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#105 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#106 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#107 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#108 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#109 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#110 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#111 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#112 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#113 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#114 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#115 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#116 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/A[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#117 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#118 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#119 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#120 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#121 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#122 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#123 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#124 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#125 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#126 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#127 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#128 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#129 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#130 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#131 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#132 Warning
+Asynchronous driver check  
+DSP U_bev_accel_top/U_sa_engine/w11_int_r0 input pin U_bev_accel_top/U_sa_engine/w11_int_r0/B[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/u0_cdc_fifo_ar_64_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[1]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[1]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_hp0_clk_rst/u0_cdc_fifo_r_544_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[1]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[0]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[123]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[124]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[584]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[585]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[586]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[587]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[588]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[589]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[590]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[591]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[592]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[593]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[594]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[595]/CLR (the first 15 of 108 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[184]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[185]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[186]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[187]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[188]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[189]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[192]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[193]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[194]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[195]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[196]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[197]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[198]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[199]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[200]/CLR (the first 15 of 143 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#5 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[330]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[331]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[348]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[349]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[354]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[355]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[358]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[359]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[360]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[361]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[366]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[367]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[368]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[369]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[372]/CLR (the first 15 of 169 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#6 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[100]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[101]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[102]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[103]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[104]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[105]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[106]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[109]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[110]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[111]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[112]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[115]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[116]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[117]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[118]/CLR (the first 15 of 209 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#7 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_4, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[107]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[108]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[113]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[114]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[121]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[122]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[125]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[126]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[127]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[128]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[129]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[130]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[131]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[132]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[133]/CLR (the first 15 of 107 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#8 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_5, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[0]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[586]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[587]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[589]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[593]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[609]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_frs/s_data_reg[610]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#9 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_6, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[190]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[191]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[208]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[209]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[210]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[211]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[218]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[219]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[224]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[225]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[262]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[263]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[266]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[267]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[270]/CLR (the first 15 of 111 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#10 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/image_make_ctrl_u0/s_valid_i_2__4_replica_7, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[256]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[257]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[258]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[259]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[260]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[261]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[264]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[265]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[268]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[269]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[272]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[273]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[276]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[277]/CLR, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/image_make_top_u0/imk_30T.U0_sptpost_sample_wdma/avr_rs_u0/u_avr_brs/payload_tmp0_reg[280]/CLR (the first 15 of 246 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#11 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/config_s_inst/a2sync_reset_cam0_clk/afifo_24w_4096d_u0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[1]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#12 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/rstdiv2_sync_r1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r1_reg/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[0]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[10]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[11]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[1]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[2]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[3]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[4]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[5]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[6]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[7]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[8]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rst_sync_r_reg[9]/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/rstdiv0_sync_r1_reg_rep/PRE (the first 15 of 58 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#13 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/AI_CORE_CLK_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/u_host_ctrl_rst/reset_1d_reg/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/u_host_ctrl_rst/reset_2d_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#14 Warning
+LUT drives async reset alert  
+LUT cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/reset_1d_i_1__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_1d_reg/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_1/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_10/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_11/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_12/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_13/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_14/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_15/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_16/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_17/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_18/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_19/PRE, U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/u_sync_ddr_clk_rst/reset_2d_reg_replica_2/PRE (the first 15 of 39 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+PDRC-190#1 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/read_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X86Y0 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/read_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+Related violations: <none>
+
+SYNTH-6#1 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/ddr_phy_prbs_rdlvl_gen.u_ddr_phy_prbs_rdlvl/dec_cnt_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b0_0_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#3 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b0_3_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#4 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b1_0_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#5 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b1_1_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#6 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b1_2_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#7 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b1_3_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#8 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b2_0_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#9 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b2_1_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#10 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b2_2_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#11 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b2_3_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#12 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b3_0_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#13 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b3_1_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#14 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance U_bev_accel_top/U_lut_engine/row_b3_3_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-11#1 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[0].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#2 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[10].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#3 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[11].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#4 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[12].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#5 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[13].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#6 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[14].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#7 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[15].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#8 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[1].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#9 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[2].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#10 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[3].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#11 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[4].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#12 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[5].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#13 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[6].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#14 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[7].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#15 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[8].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#16 Warning
+DSP output not registered  
+DSP instance U_bev_accel_top/U_sa_engine/interp_ch[9].u_mul/mant_prod_w is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-12#1 Warning
+DSP input not registered  
+DSP instance U_bev_accel_top/U_lut_engine/pipe_cam_v0 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#2 Warning
+DSP input not registered  
+DSP instance U_bev_accel_top/U_lut_engine/pixel_linear_idx_s2 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#3 Warning
+DSP input not registered  
+DSP instance U_bev_accel_top/U_sa_engine/w00_int_r0 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#4 Warning
+DSP input not registered  
+DSP instance U_bev_accel_top/U_sa_engine/w01_int_r0 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#5 Warning
+DSP input not registered  
+DSP instance U_bev_accel_top/U_sa_engine/w10_int_r0 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#6 Warning
+DSP input not registered  
+DSP instance U_bev_accel_top/U_sa_engine/w11_int_r0 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+TIMING-4#1 Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_clkgen_742_5_u0/inst/clk_in1 is defined downstream of clock clk_out1_clk_wiz_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on PJTAG_TDI relative to clock(s) jtag_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on PJTAG_TMS relative to clock(s) jtag_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on PJTAG_TDO relative to clock(s) jtag_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on ddr3_reset_n relative to clock(s) sys_clk_p
+Related violations: <none>
+
+TIMING-27#1 Warning
+Invalid primary clock on hierarchical pin  
+A primary clock U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_clkgen_742_5_u0/inst/clk_in1 is created on an inappropriate internal pin U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_clkgen_742_5_u0/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-27#2 Warning
+Invalid primary clock on hierarchical pin  
+A primary clock clk_fpga_0 is created on an inappropriate internal pin U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/ps_ai_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-28#1 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_clk_wiz_0 is referenced by name inside timing constraint (see constraint position 22 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/clk_wiz_0_inst/inst/plle2_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#2 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_clk_wiz_0 is referenced by name inside timing constraint (see constraint position 23 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/clk_wiz_0_inst/inst/plle2_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#3 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_clk_wiz_0 is referenced by name inside timing constraint (see constraint position 24 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/clk_wiz_0_inst/inst/plle2_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#4 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_out1_clk_wiz_0 is referenced by name inside timing constraint (see constraint position 25 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/clk_wiz_0_inst/inst/plle2_adv_inst/CLKOUT0]
+Related violations: <none>
+
+TIMING-28#5 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_pll_i is referenced by name inside timing constraint (see constraint position 24 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i/CLKFBOUT]
+Related violations: <none>
+
+TIMING-28#6 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_pll_i is referenced by name inside timing constraint (see constraint position 25 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i/CLKFBOUT]
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hier -filter {NAME =~ */*infrastructure/adj_flag_r1*/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '16' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: D:/vivado2018.3/part2-sandbox/fastbev_part2_ascii/constrs/impl_constraints.xdc (Line: 5563)
+Related violations: <none>
+
+XDCB-5#2 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hier -filter {NAME =~ */*infrastructure/calib_error_r_reg[0]/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '17' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: D:/vivado2018.3/part2-sandbox/fastbev_part2_ascii/constrs/impl_constraints.xdc (Line: 5564)
+Related violations: <none>
+
+XDCB-5#3 Warning
+Runtime inefficient way to find pin objects  
+The option '-to : [get_pins -hier -filter {NAME =~ */*infrastructure/init_calib_complete*0*/D}]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '15' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: D:/vivado2018.3/part2-sandbox/fastbev_part2_ascii/constrs/impl_constraints.xdc (Line: 5562)
+Related violations: <none>
+
+REQP-1959#1 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#2 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#3 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#4 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#5 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#6 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#7 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#8 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#9 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#10 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#11 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#12 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#13 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#14 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#15 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#16 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#17 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#18 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#19 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#20 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#21 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#22 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#23 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#24 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#25 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#26 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#27 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#28 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#29 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#30 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#31 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#32 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#33 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#34 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#35 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#36 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#37 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#38 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#39 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#40 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#41 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#42 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#43 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#44 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#45 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#46 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#47 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#48 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#49 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[0].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#50 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#51 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#52 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#53 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#54 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[5].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#55 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#56 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#57 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[1].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#58 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[2].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#59 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[3].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#60 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[4].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#61 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[6].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#62 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[7].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#63 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[8].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#64 Advisory
+connects_SERDES_RST_driver_not_FF  
+U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0/u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[9].iserdes_dq_.iserdesdq: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+

@@ -1,0 +1,72 @@
+# FastBEV NuScenes runtime configuration.
+
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+extractor:
+  dir: ./imodel/extractor/nuscenes
+  stage: g
+  run_backend: zg330
+
+decoder:
+  dir: ./imodel/decoder/nuscenes
+  stage: g
+  run_backend: zg330
+
+dataset:
+  imageDir: ./io/input/data/dataset_info.json
+  lutDir: ./io/input/fastbev_lut_table.bin
+  boxDir: ./io/output/result
+  pngDir: ./io/output/png
+  paraDir: ./io/output/parameter
+  logDir: ./io/log
+  camera: 6
+  imageW: 176
+  imageH: 64
+
+bev:
+  bevx: 200
+  bevy: 200
+  bevz: 4
+  channels: 64
+  fp32Bytes: 4
+
+nms:
+  threshold: 0.6
+  threslist: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.5, 0.5, 0.2]
+
+alert:
+  enabled: true
+  confidence_threshold: 0.62
+  class_ids: [0, 1, 2, 3, 4, 5, 6, 7]
+  distance_m:
+    caution: 10.0
+    danger: 5.0
+    emergency: 3.0
+  confirm_frames:
+    caution: 3
+    danger: 2
+    emergency: 2
+  clear_frames: 3
+  hysteresis_m: 2.0
+  direction_degrees:
+    front_half_width: 30.0
+    diagonal_width: 60.0
+  led:
+    enabled: true
+    dev_mem: /dev/mem
+    duration_ms: 3000
+    refresh_ms: 2500
+    danger_toggle_ms: 500
+    emergency_toggle_ms: 125
+  audio:
+    enabled: true
+    device: "plughw:CARD=UACDemoV10,DEV=0"
+    directory: ./assets/alerts
+    cooldown_ms: 5000
+    minimum_level: danger
+    emergency_preempts: true

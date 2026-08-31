@@ -1,0 +1,12 @@
+>>>>>[07/18/26 01:18:40] icraft.DemergeTransposePass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.ExpandInputPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.SplitExpandSeqPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.SplitConcatPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.TurnMultiInputOpLayoutPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.OptimizeTransEFFSeqPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.DemergeTransposeSeqPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.OptimizeCReshapeEfficiencyPass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.ConvertTranspose2ReshapePass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.MergeMultipleReshapePass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.RemoveUselessReshapePass<<<<<
+>>>>>[07/18/26 01:18:40] icraft.ReTurnOfmLayoutPass<<<<<

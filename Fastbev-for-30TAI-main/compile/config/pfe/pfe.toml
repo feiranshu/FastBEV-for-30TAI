@@ -1,0 +1,44 @@
+[parse]
+net_name = "pfe"
+framework = "onnx"
+network = "./fmodel/pfe/pfe.onnx"
+inputs = [1,11,30000,20]
+inputs_layout = "FD"
+inputs_dtype = "fp32"
+pre_method = "nop"
+pre_mean = "nop"
+pre_scale = "nop"
+channel_swap = "nop"
+target = "zhuge"
+jr_path = "../deploy/imodel/pfe"
+log_path = "./logs/pfe/parse"
+
+[optimize]
+target = "zhuge"
+jr_path = "../deploy/imodel/pfe"
+json = "../deploy/imodel/pfe/pfe_parsed.json"
+raw = "../deploy/imodel/pfe/pfe_parsed.raw"
+log_path = "./logs/pfe/optimize"
+
+[quantize]
+target = "zhuge"
+qdtype = "fp16"
+per = "channel"
+saturation = "kld"
+jr_path = "../deploy/imodel/pfe"
+json = "../deploy/imodel/pfe/pfe_optimized.json"
+raw = "../deploy/imodel/pfe/pfe_optimized.raw"
+log_path = "./logs/pfe/quantize"
+
+[adapt]
+target = "zhuge"
+jr_path = "../deploy/imodel/pfe"
+json = "../deploy/imodel/pfe/pfe_quantized.json"
+raw = "../deploy/imodel/pfe/pfe_quantized.raw"
+log_path = "./logs/pfe/adapt"
+
+[generate]
+jr_path = "../deploy/imodel/pfe"
+json = "../deploy/imodel/pfe/pfe_adapted.json"
+raw = "../deploy/imodel/pfe/pfe_adapted.raw"
+log_path = "./logs/pfe/generate"

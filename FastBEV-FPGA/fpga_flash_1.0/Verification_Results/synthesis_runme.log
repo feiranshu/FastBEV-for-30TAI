@@ -1,0 +1,933 @@
+
+*** Running vivado
+    with args -log bev_edif_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bev_edif_top.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source bev_edif_top.tcl -notrace
+Command: synth_design -top bev_edif_top -part xc7z030ffg676-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 43540 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 361.887 ; gain = 104.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'bev_edif_top' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_edif_top.v:28]
+INFO: [Synth 8-6157] synthesizing module 'ps_ai_wrap_demo' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/ps_ai_wrap_demo.v:15]
+INFO: [Synth 8-6157] synthesizing module 'bev_accel_top' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_accel_top.v:13]
+	Parameter RESET_ADDR bound to: 16'b0000000001110111 
+INFO: [Synth 8-6157] synthesizing module 'bev_reg_ctrl' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_reg_ctrl.v:24]
+	Parameter CTRL_START_ADDR bound to: 16'b0000000000000000 
+	Parameter LUT_BASE_ADDR_A bound to: 16'b0000000000000001 
+	Parameter LUT_SIZE_ADDR bound to: 16'b0000000000000010 
+	Parameter FEAT2D_BASE_ADDR_A bound to: 16'b0000000000000011 
+	Parameter FEAT3D_WR_ADDR_A bound to: 16'b0000000000000100 
+	Parameter FEAT3D_WR_SIZE_A bound to: 16'b0000000000000101 
+	Parameter BEV_PARAMS_ADDR bound to: 16'b0000000000001001 
+	Parameter IMG_PARAMS_ADDR bound to: 16'b0000000000001010 
+	Parameter COMP_DONE_ADDR bound to: 16'b0000000000100000 
+	Parameter STATUS_ADDR bound to: 16'b0000000000100001 
+	Parameter PERF_CNT_LO_ADDR bound to: 16'b0000000000100010 
+	Parameter PERF_CNT_HI_ADDR bound to: 16'b0000000000100011 
+	Parameter VERSION_ADDR bound to: 16'b0000000000110000 
+	Parameter DEBUG_REG_ADDR bound to: 16'b0000000011111111 
+	Parameter BEV_VERSION bound to: -1106771967 - type: integer 
+	Parameter DECODER_INT8_BYTES bound to: 40960000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'bev_reg_ctrl' (1#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_reg_ctrl.v:24]
+INFO: [Synth 8-6157] synthesizing module 'lut_engine' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:47]
+	Parameter S_IDLE bound to: 5'b00000 
+	Parameter S_PREP_P bound to: 5'b00001 
+	Parameter S_RD_LUT bound to: 5'b00010 
+	Parameter S_WAIT_LUT bound to: 5'b00011 
+	Parameter S_PARSE_LUT bound to: 5'b00100 
+	Parameter S_CALC_FEAT0 bound to: 5'b00101 
+	Parameter S_CALC_FEAT1 bound to: 5'b00110 
+	Parameter S_CALC_FEAT2 bound to: 5'b10011 
+	Parameter S_CALC_FEAT3 bound to: 5'b10100 
+	Parameter S_CALC_FEAT4 bound to: 5'b10110 
+	Parameter S_RD_FEAT bound to: 5'b00111 
+	Parameter S_WAIT_FEAT bound to: 5'b01000 
+	Parameter S_START_QUANT bound to: 5'b01001 
+	Parameter S_WAIT_QUANT bound to: 5'b01010 
+	Parameter S_STORE_QUANT bound to: 5'b01011 
+	Parameter S_NEXT_CBLOCK bound to: 5'b01100 
+	Parameter S_NEXT_P bound to: 5'b01101 
+	Parameter S_PREP_WRITE_E bound to: 5'b01110 
+	Parameter S_WR_OUT bound to: 5'b01111 
+	Parameter S_NEXT_WRITE bound to: 5'b10000 
+	Parameter S_ADV_GROUP bound to: 5'b10001 
+	Parameter S_DONE bound to: 5'b10010 
+	Parameter S_PREP_WRITE_O bound to: 5'b10101 
+INFO: [Synth 8-6157] synthesizing module 'fp32_int8_quant' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/fp32_int8_quant.v:33]
+	Parameter SHIFT_BASE bound to: 156 - type: integer 
+	Parameter ZERO_E bound to: 116 - type: integer 
+	Parameter SAT_E bound to: 156 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fp32_int8_quant' (2#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/fp32_int8_quant.v:33]
+INFO: [Synth 8-226] default block is never used [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:195]
+INFO: [Synth 8-226] default block is never used [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:195]
+WARNING: [Synth 8-5856] 3D RAM qbuf0_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM qbuf1_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM qbuf2_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM qbuf3_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element p_abs_reg was removed.  [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:405]
+WARNING: [Synth 8-6014] Unused sequential element lut_idx_reg was removed.  [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:406]
+WARNING: [Synth 8-6014] Unused sequential element lut_batch_reg was removed.  [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:440]
+INFO: [Synth 8-6155] done synthesizing module 'lut_engine' (3#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:47]
+INFO: [Synth 8-6157] synthesizing module 'dma_arbiter' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/dma_arbiter.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'dma_arbiter' (4#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/dma_arbiter.v:9]
+INFO: [Synth 8-6157] synthesizing module 'pulse_cross' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/pulse_cross.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'pulse_cross' (5#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/pulse_cross.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'bev_accel_top' (6#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_accel_top.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'bev_edif_top' (7#1) [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_edif_top.v:28]
+WARNING: [Synth 8-3331] design dma_arbiter has unconnected port clk
+WARNING: [Synth 8-3331] design dma_arbiter has unconnected port rst_n
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[7]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[6]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[5]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[4]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[3]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[2]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[1]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[0]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[31]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[30]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[29]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[28]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[27]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[26]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[25]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[24]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[23]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[22]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[21]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[20]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[19]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[18]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[1]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_awaddr[0]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[31]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[30]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[29]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[28]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[27]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[26]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[25]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[24]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[23]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[22]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[21]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[20]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[19]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[18]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[1]
+WARNING: [Synth 8-3331] design bev_accel_top has unconnected port itf_ra_araddr[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 420.961 ; gain = 163.453
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 420.961 ; gain = 163.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 420.961 ; gain = 163.453
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z030ffg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc]
+CRITICAL WARNING: [Vivado 12-4430] You are lowering the severity from an ERROR. This can potentially lead to board damage or other functionality issues on hardware. If this is not desired, please run 'reset_property SEVERITY [get_drc_checks REQP-44]' to undo this change. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc:1]
+CRITICAL WARNING: [Vivado 12-4430] You are lowering the severity from an ERROR. This can potentially lead to board damage or other functionality issues on hardware. If this is not desired, please run 'reset_property SEVERITY [get_drc_checks REQP-46]' to undo this change. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc:2]
+CRITICAL WARNING: [Vivado 12-4430] You are lowering the severity from an ERROR. This can potentially lead to board damage or other functionality issues on hardware. If this is not desired, please run 'reset_property SEVERITY [get_drc_checks REQP-52]' to undo this change. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc:3]
+CRITICAL WARNING: [Vivado 12-4430] You are lowering the severity from an ERROR. This can potentially lead to board damage or other functionality issues on hardware. If this is not desired, please run 'reset_property SEVERITY [get_drc_checks REQP-56]' to undo this change. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc:4]
+Finished Parsing XDC File [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/ai7030.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/bev_edif_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/bev_edif_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/ps_ai_i/proc_sys_reset_0/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:68]
+WARNING: [Vivado 12-508] No pins matched '*cdc_to*/D'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:69]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/ps_ai_i/processing_system7_0/inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:99]
+WARNING: [Vivado 12-508] No pins matched 'PS7_i/FCLKCLK[0]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:100]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/ps_ai_i/proc_sys_reset_1/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:842]
+WARNING: [Vivado 12-508] No pins matched '*cdc_to*/D'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:843]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/clkrst_wrapper_u0/AI_CORE_CLK/inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:1468]
+WARNING: [Vivado 12-180] No cells matched '*adv*'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:1469]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ps_ai_wrapper_u0/clk_wiz_0_inst/inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:3489]
+WARNING: [Vivado 12-180] No cells matched '*adv*'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:3490]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_clkgen_742_5_u0/inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:3561]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:3562]
+WARNING: [Vivado 12-584] No ports matched 'clk_in1'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:3562]
+WARNING: [Vivado 12-180] No cells matched '*adv*'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:3566]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'rx_sdi_inst/mgtclk_inst0/inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4658]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4659]
+WARNING: [Vivado 12-584] No ports matched 'clk_in1'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4659]
+WARNING: [Vivado 12-180] No cells matched '*adv*'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4663]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'rx_sdi_inst/sys_clk_inst0/inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4883]
+WARNING: [Vivado 12-180] No cells matched '*adv*'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4884]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4924]
+WARNING: [Vivado 12-508] No pins matched '*clk_ref_mmcm_gen.mmcm_i*CLKIN1'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:4925]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/mig_ddr3_u0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5498]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {NAME =~ */mc0/mc_read_idle_r_reg}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5557]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {NAME =~ */input_[?].iserdes_dq_.iserdesdq}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5557]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5558]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5559]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */DQSFOUND} -of [get_cells -hier -filter {REF_NAME == PHASER_IN_PHY}]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5559]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5560]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {NAME =~ */OSERDESRST} -of [get_cells -hier -filter {REF_NAME == PHASER_OUT_PHY}]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5560]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5561]
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -hier -filter {NAME =~ */u_iodelay_ctrl/sys_rst_i}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5566]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -hier -filter {NAME =~ */*infrastructure/init_calib_complete*0*/D}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5569]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -hier -filter {NAME =~ */*infrastructure/adj_flag_r1*/D}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5570]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -hier -filter {NAME =~ */*infrastructure/calib_error_r_reg[0]/D}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5571]
+WARNING: [Vivado 12-584] No ports matched 'rx_gtx_full_reset'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5594]
+WARNING: [Vivado 12-584] No ports matched 'rx_gtx_full_reset'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5595]
+WARNING: [Constraints 18-619] A clock with name 'sys_clk_p' already exists, overwriting the previous clock with the same name. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5604]
+WARNING: [Vivado 12-584] No ports matched 'FMC_HPC_DP0_M2C_N'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5610]
+WARNING: [Vivado 12-584] No ports matched 'FMC_HPC_DP0_M2C_P'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5611]
+WARNING: [Vivado 12-584] No ports matched 'FMC_HPC_GBTCLK0_M2C_C_P'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5612]
+WARNING: [Vivado 12-584] No ports matched 'FMC_HPC_GBTCLK0_M2C_C_P'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5613]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_clk_wiz_0'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5647]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5647]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out2_clk_wiz_0'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5647]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5647]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out2_clk_wiz_0'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5648]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5648]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_clk_wiz_0'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5648]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5648]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_clk_wiz_0'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5652]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5652]
+WARNING: [Vivado 12-627] No clocks matched 'clk_pll_i'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5652]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5652]
+WARNING: [Vivado 12-627] No clocks matched 'clk_pll_i'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5653]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5653]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_clk_wiz_0'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5653]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5653]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_sys_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5656]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5656]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_mgtclk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5656]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5656]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5911]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5912]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5912]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5912]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5912]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5989]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5990]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5990]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5990]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:5990]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6067]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6068]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6068]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6068]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6068]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6204]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6205]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6205]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6205]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6205]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6282]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6283]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6283]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6283]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6283]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6360]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6361]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6361]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6361]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6361]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6718]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6719]
+WARNING: [Vivado 12-584] No ports matched 'wr_clk'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6719]
+WARNING: [Vivado 12-830] No fanout objects found for 'all_fanout -from [get_ports -scoped_to_current_instance wr_clk] -flat -endpoints_only'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6719]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hierarchical -filter {NAME =~ *gdm.dm_gen.dm*/gpr1.dout_i_reg*}'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6719]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6872]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6873]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6873]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6878]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6879]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6879]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6884]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6885]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6885]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6890]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6891]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6891]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6896]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6897]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6897]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6902]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6903]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6903]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6908]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6909]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6909]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6914]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6915]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6915]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/rindex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6920]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6921]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6921]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/rindex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6926]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6927]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6927]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/windex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6932]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6933]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6933]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/windex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6938]
+WARNING: [Vivado 12-4214] option '-scoped_to_current_instance' can't be used with top instance, ignoring this option. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6939]
+WARNING: [Vivado 12-584] No ports matched 'src_arst'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:6939]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/write_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7151]
+WARNING: [Vivado 12-180] No cells matched 'syncstages_ff_reg[0]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7152]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/write_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7157]
+WARNING: [Vivado 12-180] No cells matched 'syncstages_ff_reg[0]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7158]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/read_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7166]
+WARNING: [Vivado 12-180] No cells matched 'syncstages_ff_reg[0]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7167]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/read_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7172]
+WARNING: [Vivado 12-180] No cells matched 'syncstages_ff_reg[0]'. [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7173]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/write_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7182]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/write_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7185]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7188]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_trans_inst0/axis_master_inst/afifo_24w_4096d_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7191]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/read_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7194]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/frame_read_write_m0/read_buf/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7197]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7200]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_ar_cdc_fifo_ddr/u0_cdc_fifo_ar_64/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7203]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7206]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_aw_cdc_fifo_ddr/u0_cdc_fifo_aw_616/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7209]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7212]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/ZGolo/u_AI_Mate_top/U0_ddr2hp_itcn/u0_r_cdc_fifo_ddr/u0_cdc_fifo_r_544/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7215]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/rindex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7218]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/rindex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7221]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/windex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7224]
+CRITICAL WARNING: [Vivado 12-613] Cannot find cell 'U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_write_req_gen_m0/windex_buf_2b_16w_u0/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst' in current context, where current instance = '' and current design = 'preSynthElab_1' [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc:7227]
+Finished Parsing XDC File [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/bev_edif_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/bev_edif_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/bev_edif_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 861.086 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 861.145 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 861.145 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 861.145 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 861.145 ; gain = 603.637
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z030ffg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 861.145 ; gain = 603.637
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc, line 4915).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/constrs/impl_constraints.xdc, line 4916).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 861.145 ; gain = 603.637
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "cand0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:388]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:488]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:374]
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_group_base" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "lut_batch_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rd_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cur_cam_id" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cur_u" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cam_row_idx" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "pixel_mul_lo" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "feat_base_addr_r" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wr_req" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 861.145 ; gain = 603.637
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   5 Input     40 Bit       Adders := 16    
+	   2 Input     40 Bit       Adders := 16    
+	   2 Input     32 Bit       Adders := 9     
+	   2 Input      8 Bit       Adders := 50    
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	              512 Bit    Registers := 2     
+	              128 Bit    Registers := 32    
+	               64 Bit    Registers := 1     
+	               40 Bit    Registers := 16    
+	               32 Bit    Registers := 20    
+	               21 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               12 Bit    Registers := 2     
+	                9 Bit    Registers := 16    
+	                8 Bit    Registers := 39    
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 172   
++---Muxes : 
+	   2 Input    512 Bit        Muxes := 3     
+	   4 Input    128 Bit        Muxes := 8     
+	  15 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 11    
+	   4 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 16    
+	   2 Input      8 Bit        Muxes := 20    
+	   3 Input      5 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 4     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 66    
+	  24 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 32    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module bev_reg_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 7     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	  15 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module fp32_int8_quant 
+Detailed RTL Component Info : 
++---Adders : 
+	   5 Input     40 Bit       Adders := 1     
+	   2 Input     40 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	               40 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module lut_engine 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 9     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	              512 Bit    Registers := 2     
+	              128 Bit    Registers := 32    
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 13    
+	               21 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input    512 Bit        Muxes := 1     
+	   4 Input    128 Bit        Muxes := 8     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 6     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 4     
+	   3 Input      5 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	  24 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 60    
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 32    
+Module dma_arbiter 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input    512 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
+Module pulse_cross 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                1 Bit    Registers := 7     
+Module bev_accel_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 400 (col length:80)
+BRAMs: 530 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][3]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][2]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][1]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "qbuf0_reg[0][0]" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+DSP Report: Generating DSP cam_row_idx0, operation Mode is: C+A*B.
+DSP Report: operator cam_row_idx0 is absorbed into DSP cam_row_idx0.
+DSP Report: operator cam_row_idx1 is absorbed into DSP cam_row_idx0.
+DSP Report: Generating DSP pixel_mul_lo0, operation Mode is: A*B.
+DSP Report: operator pixel_mul_lo0 is absorbed into DSP pixel_mul_lo0.
+DSP Report: Generating DSP pixel_mul_hi0, operation Mode is: A*B.
+DSP Report: operator pixel_mul_hi0 is absorbed into DSP pixel_mul_hi0.
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[7]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[6]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[5]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[4]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[3]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[2]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[1]
+WARNING: [Synth 8-3331] design lut_engine has unconnected port bev_z[0]
+INFO: [Synth 8-3886] merging instance 'fp32_int8_quant:/s1_prod_reg[39]' (FDC) to 'fp32_int8_quant:/s1_prod_reg[34]'
+INFO: [Synth 8-3886] merging instance 'fp32_int8_quant:/s1_prod_reg[37]' (FDC) to 'fp32_int8_quant:/s1_prod_reg[34]'
+INFO: [Synth 8-3886] merging instance 'fp32_int8_quant:/s1_prod_reg[38]' (FDC) to 'fp32_int8_quant:/s1_prod_reg[34]'
+INFO: [Synth 8-3886] merging instance 'fp32_int8_quant:/s1_prod_reg[34]' (FDC) to 'fp32_int8_quant:/s1_prod_reg[35]'
+INFO: [Synth 8-3886] merging instance 'fp32_int8_quant:/s1_prod_reg[35]' (FDC) to 'fp32_int8_quant:/s1_prod_reg[36]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (fp32_int8_quant:/\s1_prod_reg[36] )
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[0]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[5]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[0]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[1]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[6]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[1]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[5]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[2]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[2]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[6]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[3]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[8]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[3]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[7]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[4]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[9]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[4]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[8]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[5]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[10]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[5]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[9]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[6]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[6]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[10]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[7]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[7]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[8]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[13]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[8]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[12]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[9]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[14]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[9]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[13]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[10]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[15]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[10]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[14]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[11]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[16]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[11]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[15]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[12]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[17]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[12]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[16]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[13]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[18]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[13]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[17]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[14]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[19]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[14]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[18]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[15]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[20]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[15]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[19]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[16]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[16]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[20]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[17]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[17]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[18]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[18]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[18]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[19]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[19]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[19]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[20]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[20]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[20]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[21]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[21]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[21]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[22]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[22]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[22]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[23]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[23]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[23]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[24]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[24]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[24]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[25]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[25]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[25]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[26]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[26]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[26]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[27]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[27]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[27]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x3_r_reg[28]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_r_reg[28]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/plane_size_x2_r_reg[28]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[0]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[1]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[2]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[3]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[4]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[21]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[21]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[22]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[22]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[23]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[23]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[24]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[24]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[25]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[25]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[26]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[26]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[27]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[27]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[28]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[28]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[29]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[29]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[30]'
+INFO: [Synth 8-3886] merging instance 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[30]' (FDCE) to 'U_bev_accel_top/U_lut_engine/zc_stride_r_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\zc_stride_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[0].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[1].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[2].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[3].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[4].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[5].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[6].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[7].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[8].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[9].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[10].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[11].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[12].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[13].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[14].U_QUANT /\s2_mag_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U_bev_accel_top/U_lut_engine /\quant_gen[15].U_QUANT /\s2_mag_reg[8] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 861.145 ; gain = 603.637
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|lut_engine  | C+A*B       | 12     | 8      | 16     | -      | 21     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|lut_engine  | A*B         | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|lut_engine  | A*B         | 12     | 5      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:444]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:462]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:462]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'sys_clk_p'
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 898.938 ; gain = 641.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 914.402 ; gain = 656.895
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:462]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:464]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:465]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_reg_ctrl.v:158]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/lut_engine.v:444]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_reg_ctrl.v:159]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/rtl/bev_reg_ctrl.v:159]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------+----------+
+|      |BlackBox name   |Instances |
++------+----------------+----------+
+|1     |ps_ai_wrap_demo |         1|
++------+----------------+----------+
+
+Report Cell Usage: 
++------+-----------------------+------+
+|      |Cell                   |Count |
++------+-----------------------+------+
+|1     |ps_ai_wrap_demo_bbox_0 |     1|
+|2     |CARRY4                 |   422|
+|3     |DSP48E1                |     1|
+|4     |DSP48E1_1              |     2|
+|5     |LUT1                   |   150|
+|6     |LUT2                   |  1693|
+|7     |LUT3                   |   656|
+|8     |LUT4                   |  1328|
+|9     |LUT5                   |  2268|
+|10    |LUT6                   |  2747|
+|11    |MUXF7                  |   554|
+|12    |FDCE                   |  6950|
+|13    |FDPE                   |    32|
+|14    |IBUF                   |     6|
+|15    |OBUF                   |    44|
++------+-----------------------+------+
+
+Report Instance Areas: 
++------+------------------------------+-------------------+------+
+|      |Instance                      |Module             |Cells |
++------+------------------------------+-------------------+------+
+|1     |top                           |                   | 17549|
+|2     |  U_bev_accel_top             |bev_accel_top      | 16800|
+|3     |    U_bev_reg_ctrl            |bev_reg_ctrl       |   660|
+|4     |    U_done_cross              |pulse_cross        |     9|
+|5     |    U_lut_engine              |lut_engine         | 15966|
+|6     |      \quant_gen[0].U_QUANT   |fp32_int8_quant    |   380|
+|7     |      \quant_gen[10].U_QUANT  |fp32_int8_quant_1  |   374|
+|8     |      \quant_gen[11].U_QUANT  |fp32_int8_quant_2  |   374|
+|9     |      \quant_gen[12].U_QUANT  |fp32_int8_quant_3  |   374|
+|10    |      \quant_gen[13].U_QUANT  |fp32_int8_quant_4  |   374|
+|11    |      \quant_gen[14].U_QUANT  |fp32_int8_quant_5  |   374|
+|12    |      \quant_gen[15].U_QUANT  |fp32_int8_quant_6  |   374|
+|13    |      \quant_gen[1].U_QUANT   |fp32_int8_quant_7  |   374|
+|14    |      \quant_gen[2].U_QUANT   |fp32_int8_quant_8  |   374|
+|15    |      \quant_gen[3].U_QUANT   |fp32_int8_quant_9  |   374|
+|16    |      \quant_gen[4].U_QUANT   |fp32_int8_quant_10 |   374|
+|17    |      \quant_gen[5].U_QUANT   |fp32_int8_quant_11 |   374|
+|18    |      \quant_gen[6].U_QUANT   |fp32_int8_quant_12 |   374|
+|19    |      \quant_gen[7].U_QUANT   |fp32_int8_quant_13 |   374|
+|20    |      \quant_gen[8].U_QUANT   |fp32_int8_quant_14 |   374|
+|21    |      \quant_gen[9].U_QUANT   |fp32_int8_quant_15 |   374|
+|22    |    U_start_cross             |pulse_cross_0      |    93|
++------+------------------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1151.266 ; gain = 893.758
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1151.266 ; gain = 453.574
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1151.266 ; gain = 893.758
+INFO: [Project 1-571] Translating synthesized netlist
+Parsing EDIF File [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/netlist/ps_ai_wrap_demo.edf]
+Finished Parsing EDIF File [E:/experiment/¸´µ©Î¢/Fast-BEV/FastBEV-FPGA/fpga_flash_1.0/Vivado_Project/netlist/ps_ai_wrap_demo.edf]
+INFO: [Netlist 29-17] Analyzing 4682 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U0_ps_ai_wrap_demo/U0_ps_ai_peripheral/frame_to_ps_inst0/cmos_clkgen_742_5_u0/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_cke_OBUF[0]_inst, from the path connected to top-level port: ddr3_cke[0] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_odt_OBUF[0]_inst, from the path connected to top-level port: ddr3_odt[0] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[0]_inst, from the path connected to top-level port: ddr3_addr[0] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[10]_inst, from the path connected to top-level port: ddr3_addr[10] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[11]_inst, from the path connected to top-level port: ddr3_addr[11] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[12]_inst, from the path connected to top-level port: ddr3_addr[12] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[13]_inst, from the path connected to top-level port: ddr3_addr[13] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[14]_inst, from the path connected to top-level port: ddr3_addr[14] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[1]_inst, from the path connected to top-level port: ddr3_addr[1] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[2]_inst, from the path connected to top-level port: ddr3_addr[2] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[3]_inst, from the path connected to top-level port: ddr3_addr[3] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[4]_inst, from the path connected to top-level port: ddr3_addr[4] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[5]_inst, from the path connected to top-level port: ddr3_addr[5] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[6]_inst, from the path connected to top-level port: ddr3_addr[6] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[7]_inst, from the path connected to top-level port: ddr3_addr[7] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[8]_inst, from the path connected to top-level port: ddr3_addr[8] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_addr_OBUF[9]_inst, from the path connected to top-level port: ddr3_addr[9] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_ba_OBUF[0]_inst, from the path connected to top-level port: ddr3_ba[0] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_ba_OBUF[1]_inst, from the path connected to top-level port: ddr3_ba[1] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_ba_OBUF[2]_inst, from the path connected to top-level port: ddr3_ba[2] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_cs_n_OBUF[0]_inst, from the path connected to top-level port: ddr3_cs_n[0] 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_reset_n_OBUF_inst, from the path connected to top-level port: ddr3_reset_n 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_cas_n_OBUF_inst, from the path connected to top-level port: ddr3_cas_n 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_ras_n_OBUF_inst, from the path connected to top-level port: ddr3_ras_n 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-36] Removing redundant OBUF, ddr3_we_n_OBUF_inst, from the path connected to top-level port: ddr3_we_n 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'U0_ps_ai_wrap_demo/PJTAG_TCK' is not directly connected to top level port. Synthesis is ignored for IOSTANDARD but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'U0_ps_ai_wrap_demo/PJTAG_TDI' is not directly connected to top level port. Synthesis is ignored for IOSTANDARD but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'U0_ps_ai_wrap_demo/PJTAG_TMS' is not directly connected to top level port. Synthesis is ignored for IOSTANDARD but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'U0_ps_ai_wrap_demo/cam_clk' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'U0_ps_ai_wrap_demo/led[0]' is not directly connected to top level port. Synthesis is ignored for IOSTANDARD but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IOSTANDARD' constraint because net 'U0_ps_ai_wrap_demo/sys_rst' is not directly connected to top level port. Synthesis is ignored for IOSTANDARD but preserved for implementation.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1279.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1526 instances were transformed.
+  IOBUFDS_DIFF_OUT_DCIEN => IOBUFDS_DIFF_OUT_DCIEN (IBUFDS_IBUFDISABLE_INT, IBUFDS_IBUFDISABLE_INT, INV, OBUFTDS_DCIEN, OBUFTDS_DCIEN): 8 instances
+  IOBUF_DCIEN => IOBUF_DCIEN (IBUF_IBUFDISABLE, OBUFT_DCIEN): 64 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 626 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 779 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 48 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+179 Infos, 189 Warnings, 53 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 1279.992 ; gain = 1030.984
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1279.992 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/vivado2018.3/flash_1.0/flash_1.0.runs/synth_1/bev_edif_top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1279.992 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file bev_edif_top_utilization_synth.rpt -pb bev_edif_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 20 18:46:54 2026...

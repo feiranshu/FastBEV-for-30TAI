@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Program Listing for File session.h &#8212; Icraft XRT 3.33.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists\css\tree_view.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+    <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_cppapi/program_listing_file_icraft-xrt_core_session.h';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Icraft XRT 3.33.1.0 文档</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Icraft XRT
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="api_root.html">C++ API reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft.html">Namespace icraft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xir.html">Namespace icraft::xir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xrt.html">Namespace icraft::xrt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_icraft__xrt__utils.html">Namespace icraft::xrt::utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_buyi_device.html">Class BuyiDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_buyi_device_node.html">Class BuyiDeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_default_mem_manager.html">Class DefaultMemManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_default_mem_manager_node.html">Class DefaultMemManagerNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device.html">Class Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device_node.html">Class DeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_device_registry.html">Class DeviceRegistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_device.html">Class HostDevice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_device_node.html">Class HostDeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_mem_region.html">Class HostMemRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_host_mem_region_node.html">Class HostMemRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk.html">Class MemChunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_chunk_node.html">Class MemChunkNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_manager.html">Class MemManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_manager_node.html">Class MemManagerNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_ptr.html">Class MemPtr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region.html">Class MemRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_mem_region_node.html">Class MemRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_m_m_u_map_table.html">Class MMUMapTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_m_m_u_map_table_node.html">Class MMUMapTableNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_reg_region.html">Class RegRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_reg_region_node.html">Class RegRegionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_seg_table.html">Class SegTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_seg_table_node.html">Class SegTableNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_session.html">Class Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_session_node.html">Class SessionNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_tensor.html">Class Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_tensor_node.html">Class TensorNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1utils_1_1_url_parser.html">Class UrlParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_z_g330_device.html">Class ZG330Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classicraft_1_1xrt_1_1_z_g330_device_node.html">Class ZG330DeviceNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ae1a38cb593f243cb21e611d484537628.html">Function icraft::xrt::operator+(const MemPtr&amp;, uint64_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ac256b08b4de939f08f66ef2da848cd8e.html">Function icraft::xrt::operator+(uint64_t, const MemPtr&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a288b7ee752d26955ddfe0921eebc7906.html">Function icraft::xrt::operator-(const MemPtr&amp;, uint64_t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a8b74090dfb3075d41129de3976a24270.html">Function icraft::xrt::operator-(const MemPtr&amp;, const MemPtr&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1aa01f01f51fd179f0d50ed1ea67de9d96.html">Function icraft::xrt::operator&lt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1adc331dcd1e69bc979cf076cbda4e8580.html">Function icraft::xrt::operator&lt;=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1ae9e08156e1225760d595f320483e0d7b.html">Function icraft::xrt::operator&gt;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a2089c7a554ac1b86c3c9944d353251d5.html">Function icraft::xrt::operator&gt;=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_device_8h_1a01ca57d0ab88d81862d5d5210f92222f.html">Template Function icraft::xrt::utils::WaitUntil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_backend_8h_1affe7caed7c597b3591d53f7af539c17e.html">Define XRT_BACKEND_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_buyi__device_8h_1a2b67b900559a574ba875fa2a68e6d678.html">Define XRT_BUYI_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_device_8h_1ae0548dc6d8da27dde92f98f152854253.html">Define XRT_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_host__device_8h_1ace0c3cb27cfe14fda1eb036279836349.html">Define XRT_HOST_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_session_8h_1a9436b2f9bb5a3b3592dff0d9dcd1c1dd.html">Define XRT_SESSION_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_tensor_8h_1a960c4b8b0b7c90297ba211605833a9ff.html">Define XRT_TENSOR_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_zg330__device_8h_1a41c2f8bbd231401935b6d5aeeb040c1e.html">Define XRT_ZG330_DEVICE_PCH_GUARD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_device_8h_1a85bf30b5045c0b4dfd06d1d7fa0177db.html">Typedef icraft::xrt::FChunkDeleter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_session_8h_1a4ac58eb09e80088914f526b5d1fd51ca.html">Typedef icraft::xrt::TimeProfileResults</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../_autosummary/xrt.html">Python API reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">更新日志</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../changelogs/change_logs.html">更新日志</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Program Listing for File session.h</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="program-listing-for-file-session-h">
+<span id="program-listing-file-icraft-xrt-core-session-h"></span><h1>Program Listing for File session.h<a class="headerlink" href="#program-listing-for-file-session-h" title="此标题的永久链接">#</a></h1>
+<p>↰ <a class="reference internal" href="file_icraft-xrt_core_session.h.html#file-icraft-xrt-core-session-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">icraft-xrt\core\session.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma once</span>
+<span class="cp">#ifndef XRT_SESSION_PCH_GUARD</span>
+<span class="cp">#define XRT_SESSION_PCH_GUARD</span>
+<span class="c1">//#include &quot;filesystem/filesystem.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;icraft-xrt/core/backend.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;icraft-xir/core/network.h&gt;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">icraft</span><span class="o">::</span><span class="nn">xrt</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">xir</span><span class="o">::</span><span class="n">Network</span><span class="p">;</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">xir</span><span class="o">::</span><span class="n">Array</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">SessionNode</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">NodeBase</span><span class="o">&lt;</span><span class="n">SessionNode</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Backend</span><span class="o">&gt;</span><span class="w"> </span><span class="n">backends</span><span class="p">;</span>
+<span class="w">        </span><span class="n">NetworkView</span><span class="w"> </span><span class="n">network_view</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">accept</span><span class="p">(</span><span class="n">AttrVisitor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">visitor</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="o">~</span><span class="n">SessionNode</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Operation</span><span class="p">,</span><span class="w"> </span><span class="n">Backend</span><span class="p">,</span><span class="w"> </span><span class="n">FForwardOp</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">forwards_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="n">Tensor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tmap_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tuses_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">index_map_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">network_input_ids_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">network_output_ids_</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">current_index_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">time_profile_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">applied</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wall_times_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">nanoseconds</span><span class="w"> </span><span class="n">total_time_</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">backends_need_deinit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">log_time_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">log_io_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">map_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">map_byte_size</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">dump_output_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">dump_path_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">dump_format_</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">friend</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Session</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">TimeProfileResults</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Session</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">HandleBase</span><span class="o">&lt;</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="n">SessionNode</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="n">Session</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">BackendType</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">Session</span><span class="w"> </span><span class="n">Create</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NetworkView</span><span class="o">&amp;</span><span class="w"> </span><span class="n">network</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Device</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">devices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">backends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Backend</span><span class="o">&gt;</span><span class="p">{</span><span class="w"> </span><span class="n">BackendType</span><span class="o">::</span><span class="n">Init</span><span class="p">()...</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">sess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Session</span><span class="o">::</span><span class="n">Init</span><span class="p">();</span>
+<span class="w">            </span><span class="n">sess</span><span class="p">.</span><span class="n">bindToBackendsByOrder</span><span class="p">(</span><span class="n">network</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">backends</span><span class="p">),</span><span class="w"> </span><span class="n">devices</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">sess</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Session</span><span class="w"> </span><span class="n">CreateByOrder</span><span class="p">(</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">NetworkView</span><span class="o">&amp;</span><span class="w"> </span><span class="n">network</span><span class="p">,</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Backend</span><span class="o">&gt;</span><span class="w"> </span><span class="n">backends</span><span class="p">,</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Device</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">devices</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Session</span><span class="w"> </span><span class="n">CreateWithBackends</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NetworkView</span><span class="o">&amp;</span><span class="w"> </span><span class="n">network</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Backend</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">backends</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="n">Session</span><span class="w"> </span><span class="n">sub</span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">start_index</span><span class="p">,</span><span class="w"> </span><span class="kt">int64_t</span><span class="w"> </span><span class="n">end_index</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="n">Session</span><span class="w"> </span><span class="n">sub</span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">start_index</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">apply</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">enableTimeProfile</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enable</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stepTo</span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">op_id</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{});</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">forward</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">forward</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">outputs</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span><span class="w"> </span><span class="n">Backend</span><span class="o">&gt;</span><span class="w"> </span><span class="n">backendBindings</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="n">TimeProfileResults</span><span class="w"> </span><span class="n">timeProfileResults</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">totalTime</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">::</span><span class="n">period</span><span class="o">&gt;</span><span class="p">((</span><span class="o">*</span><span class="k">this</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">total_time_</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">CallBackFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Session</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sess</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="o">&amp;</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Backend</span><span class="o">&amp;</span><span class="w"> </span><span class="n">backend</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">output_tensors</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">setPreCallBack</span><span class="p">(</span><span class="n">CallBackFunc</span><span class="w"> </span><span class="n">func</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">setPostCallBack</span><span class="p">(</span><span class="n">CallBackFunc</span><span class="w"> </span><span class="n">func</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">ForwardOps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Operation</span><span class="p">,</span><span class="w"> </span><span class="n">Backend</span><span class="p">,</span><span class="w"> </span><span class="n">FForwardOp</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ForwardOps</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getForwards</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">setLogIO</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">setLogTime</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">setDumpOutputs</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file_path</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">format</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">dumpSnapshot</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filePath</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Session</span><span class="w"> </span><span class="n">CreateWithSnapshot</span><span class="p">(</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filePath</span><span class="p">,</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Backend</span><span class="o">&gt;</span><span class="w"> </span><span class="n">backends</span><span class="p">,</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Device</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">devices</span><span class="p">);</span>
+
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="n">XRT_DLL</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">bindToBackendsByOrder</span><span class="p">(</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">NetworkView</span><span class="o">&amp;</span><span class="w"> </span><span class="n">network</span><span class="p">,</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Backend</span><span class="o">&gt;</span><span class="w"> </span><span class="n">backends</span><span class="p">,</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Device</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">devices</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">backends_need_deinit</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="n">CallBackFunc</span><span class="w"> </span><span class="n">pre_callback_</span><span class="p">;</span>
+<span class="w">        </span><span class="n">CallBackFunc</span><span class="w"> </span><span class="n">post_callback_</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">logIO</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="o">&amp;</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="n">Backend</span><span class="o">&amp;</span><span class="w"> </span><span class="n">backend</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">logTime</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Operation</span><span class="o">&amp;</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="n">Backend</span><span class="o">&amp;</span><span class="w"> </span><span class="n">backend</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">dumpOutput</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Tensor</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">output_tensors</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">xir</span><span class="o">::</span><span class="n">Value</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">outputs</span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+<span class="cp">#endif </span><span class="c1">//XRT_SESSION_PCH_GUARD</span>
+</pre></div>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： chenghongxu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023, FMSH.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

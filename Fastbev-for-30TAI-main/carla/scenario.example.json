@@ -1,0 +1,21 @@
+{
+  "town": "Town03",
+  "actors": [
+    {
+      "blueprint": "vehicle.tesla.model3",
+      "transform": {
+        "location": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.3
+        },
+        "rotation": {
+          "yaw": 0.0
+        }
+      },
+      "freeze": true,
+      "_TODO": "替换成最终路线上的真实静态障碍物位置"
+    }
+  ],
+  "_WARNING": "仅为结构示例，坐标不是最终演示值"
+}

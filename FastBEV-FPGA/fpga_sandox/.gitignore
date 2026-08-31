@@ -1,0 +1,11 @@
+.Xil/
+*.jou
+*.log
+*.str
+Vivado_Project/sim/build/
+vivado_*/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/

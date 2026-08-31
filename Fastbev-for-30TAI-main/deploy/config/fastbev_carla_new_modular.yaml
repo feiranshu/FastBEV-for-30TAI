@@ -1,0 +1,138 @@
+# FastBEV CARLA modular FP16 direct-Conv configuration.
+# Requires the 0x20260721 Part2 bitstream. Low-rate perception uses ADV2
+# PERCEPTION_BATCH on 5200; high-rate control-only metadata uses 5201.
+
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+extractor:
+  dir: ./imodel/extractor/carla
+  stage: g
+  run_backend: zg330
+
+decoder:
+  dir: ./imodel/decoder/carla_fp16
+  stage: g
+  run_backend: zg330
+
+dataset:
+  imageDir: ./io/input/data/dataset_info.json
+  lutDir: ./io/input/fastbev_lut_table.bin
+  boxDir: ./io/output/result
+  pngDir: ./io/output/png
+  paraDir: ./io/output/parameter
+  logDir: ./io/log
+  camera: 6
+  imageW: 176
+  imageH: 64
+
+bev:
+  bevx: 200
+  bevy: 200
+  bevz: 4
+  channels: 64
+  fp32Bytes: 4
+
+nms:
+  threshold: 0.8
+  threslist: [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.05, 0.05, 0.02]
+  pedestrian_motorcycle_center_distance_m: 3.0
+  cross_class_iou_threshold: 0.20
+
+alert:
+  enabled: true
+  confidence_threshold: 0.8
+  class_ids: [0, 1, 2, 3, 4, 6, 7]
+  distance_m:
+    caution: 10.0
+    danger: 5.0
+    emergency: 3.0
+  confirm_frames:
+    caution: 3
+    danger: 2
+    emergency: 2
+  clear_frames: 3
+  hysteresis_m: 2.0
+  direction_degrees:
+    front_half_width: 30.0
+    diagonal_width: 60.0
+  led:
+    enabled: false
+  audio:
+    enabled: true
+    device: "plughw:CARD=UACDemoV10,DEV=0"
+    directory: ./assets/alerts
+    cooldown_ms: 5000
+    minimum_level: danger
+    emergency_preempts: true
+
+autodrive:
+  # Vehicle cruise ceiling. High-rate control can reduce speed in curves,
+  # but will not command above 20 km/h.
+  cruise_speed_kmh: 20.0
+
+  aeb:
+    reaction_time_s: 0.15
+    safe_decel_mps2: 6.0
+    safety_margin_m: 2.0
+
+  fsm:
+    stop_distance_m: 11.0
+    stop_lane_half_width_m: 2.1
+    detection_score_min: 0.25
+    follow_enabled: false
+    follow_min_front_speed_kmh: 10.0
+
+  # Low-rate FastBEV/FOT chain: keep the original planning/tracking settings.
+  fot:
+    lateral_offsets_m: [-0.8, 0.0, 0.8]
+    obstacle_influence_m: 4.5
+    w_reference: 1.0
+    w_smooth: 0.25
+    w_bev: 0.20
+
+  # Low-rate FOT output tracking settings. These are intentionally unchanged.
+  pure_pursuit:
+    lookahead_base_m: 2.2
+    lookahead_gain_s: 0.45
+    lookahead_min_m: 2.0
+    lookahead_max_m: 6.0
+    wheelbase_m: 2.85
+    max_steer_angle_rad: 0.55
+
+  # High-rate Reference-Path-only controller.
+  # Stability-oriented defaults for roughly 20 Hz control and <= 20 km/h.
+  high_rate_control:
+    # Ld = clamp(base + gain * speed_mps, min, max)
+    # At 20 km/h this is about 5.45 m.
+    lookahead_base_m: 3.5
+    lookahead_gain_s: 0.35
+    lookahead_min_m: 3.5
+    lookahead_max_m: 6.5
+
+    # Only search forward along the already-reached path progress. This prevents
+    # nearest-point index jumping backward or to a distant self-intersection.
+    progress_search_ahead_m: 15.0
+
+    # First-order steering low-pass:
+    # filtered = prev + alpha * (raw - prev)
+    steer_lowpass_alpha: 0.22
+
+    # Normalized CARLA steer units per second. At 20 Hz, 1.2/s gives at most
+    # about 0.06 steer change per update.
+    max_steer_rate_per_s: 1.20
+
+    # High-rate controller may slow down in tighter curves to avoid exciting
+    # lateral oscillation. Straight sections can still reach 20 km/h.
+    curve_speed_min_kmh: 12.0
+    curve_speed_steer_start: 0.25
+    curve_speed_steer_full: 0.70
+
+  pid:
+    kp: 0.32
+    ki: 0.0
+    kd: 0.05

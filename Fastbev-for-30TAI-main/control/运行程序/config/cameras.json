@@ -1,0 +1,25 @@
+{
+  "width": 640,
+  "height": 480,
+  "fps": 15,
+  "fallback_fps": [10, 5],
+  "prefer_input_mjpeg": true,
+  "buffer_frames": 16,
+  "max_sync_spread_ms": 75,
+  "sync_pretrigger_ms": 160,
+  "sync_wait_ms": 120,
+  "sync_settle_ms": 15,
+  "camera_open_stagger_ms": 75,
+  "camera_retry_delay_s": 1.0,
+  "jpeg_quality": 95,
+  "cameras": [
+    {"name": "CAM_FRONT", "source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#b&3af2070&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global", "enabled": true},
+    {"name": "CAM_FRONT_LEFT", "source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#b&71cd888&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global", "enabled": true},
+    {"name": "CAM_FRONT_RIGHT", "source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#b&19d6892d&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global", "enabled": true},
+    {"name": "CAM_BACK_LEFT", "source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#c&136754ef&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global", "enabled": true},
+    {"name": "CAM_BACK", "source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#c&38dab639&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global", "enabled": true},
+    {"name": "CAM_BACK_RIGHT", "source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#c&26210594&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global", "enabled": true}
+  ],
+  "excluded_top_source": "@device_pnp_\\\\?\\usb#vid_1bcf&pid_2cc8&mi_00#a&13b54c51&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global",
+  "note": "Validated on 2026-08-17 from camera_devices_20260817_173724.json. source01=CAM_FRONT_RIGHT, source02=CAM_FRONT, source03=CAM_FRONT_LEFT, source04=CAM_BACK_LEFT, source05=CAM_BACK_RIGHT, source06=CAM_BACK. source00 is excluded as TOP; source07 is USB2.0 HD UVC WebCam."
+}

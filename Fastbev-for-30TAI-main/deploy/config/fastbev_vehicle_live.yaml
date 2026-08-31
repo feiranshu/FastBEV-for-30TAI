@@ -1,0 +1,43 @@
+# FastBEV Vehicle FP16 live Raw BGR service.
+# Requires the Vehicle Part2 bitstream that writes 20,480,000 bytes of FP16
+# NCHWc16 data directly to Decoder view(13) input v362 Runtime PLDDR.
+#
+# Runtime example:
+# ./fastbev_pipeline_vehicle_live ./config/fastbev_vehicle_live.yaml \
+#   --host 0.0.0.0 --port 5200 --source vehicle-real-edge
+
+device:
+  url: axi://zg330aiu?npu=0x40000000&dma=0x80000000
+  mmuMode: true
+  speedMode: false
+  compressFtmp: false
+  ocm_option: -1
+
+extractor:
+  dir: ./imodel/extractor/vehicle_fp16
+  stage: g
+  run_backend: zg330
+
+decoder:
+  dir: ./imodel/decoder/vehicle_fp16
+  stage: g
+  run_backend: zg330
+
+dataset:
+  lut: ./io/input/fastbev_vehicle_lut_table.bin
+
+postprocess:
+  score_threshold: 0.6
+  nms_pre: 1000
+  max_num: 50
+  nms_iou_threshold: 0.2
+
+alert:
+  enabled: true
+  range_cm: 10.0
+  audio:
+    enabled: true
+    device: plughw:CARD=UACDemoV10,DEV=0
+    directory: ./assets/alerts
+    file: attention.wav
+    cooldown_ms: 3000

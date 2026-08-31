@@ -1,0 +1,787 @@
+time      : Sat Jul 18 01:18:34 2026
+network   : fastbev_part1_nuscenes
+framework : onnx
+ai_target : ZhuGe
+
+graph     :
+op_type   : Input
+name&shape: multi_cam_imgs;[6,3,256,704]
+
+op_type   : Conv
+op_name   : Conv_0
+inputs    : multi_cam_imgs
+            412
+            413
+outputs   : 411
+
+op_type   : Relu
+op_name   : Relu_1
+inputs    : 411
+outputs   : 235
+
+op_type   : MaxPool
+op_name   : MaxPool_2
+inputs    : 235
+outputs   : 236
+
+op_type   : Conv
+op_name   : Conv_3
+inputs    : 236
+            415
+            416
+outputs   : 414
+
+op_type   : Relu
+op_name   : Relu_4
+inputs    : 414
+outputs   : 239
+
+op_type   : Conv
+op_name   : Conv_5
+inputs    : 239
+            418
+            419
+outputs   : 417
+
+op_type   : Add
+op_name   : Add_6
+inputs    : 417
+            236
+outputs   : 242
+
+op_type   : Relu
+op_name   : Relu_7
+inputs    : 242
+outputs   : 243
+
+op_type   : Conv
+op_name   : Conv_8
+inputs    : 243
+            421
+            422
+outputs   : 420
+
+op_type   : Relu
+op_name   : Relu_9
+inputs    : 420
+outputs   : 246
+
+op_type   : Conv
+op_name   : Conv_10
+inputs    : 246
+            424
+            425
+outputs   : 423
+
+op_type   : Add
+op_name   : Add_11
+inputs    : 423
+            243
+outputs   : 249
+
+op_type   : Relu
+op_name   : Relu_12
+inputs    : 249
+outputs   : 250
+
+op_type   : Conv
+op_name   : Conv_13
+inputs    : 250
+            427
+            428
+outputs   : 426
+
+op_type   : Relu
+op_name   : Relu_14
+inputs    : 426
+outputs   : 253
+
+op_type   : Conv
+op_name   : Conv_15
+inputs    : 253
+            430
+            431
+outputs   : 429
+
+op_type   : Conv
+op_name   : Conv_16
+inputs    : 250
+            433
+            434
+outputs   : 432
+
+op_type   : Add
+op_name   : Add_17
+inputs    : 429
+            432
+outputs   : 258
+
+op_type   : Relu
+op_name   : Relu_18
+inputs    : 258
+outputs   : 259
+
+op_type   : Conv
+op_name   : Conv_19
+inputs    : 259
+            436
+            437
+outputs   : 435
+
+op_type   : Relu
+op_name   : Relu_20
+inputs    : 435
+outputs   : 262
+
+op_type   : Conv
+op_name   : Conv_21
+inputs    : 262
+            439
+            440
+outputs   : 438
+
+op_type   : Add
+op_name   : Add_22
+inputs    : 438
+            259
+outputs   : 265
+
+op_type   : Relu
+op_name   : Relu_23
+inputs    : 265
+outputs   : 266
+
+op_type   : Conv
+op_name   : Conv_24
+inputs    : 266
+            442
+            443
+outputs   : 441
+
+op_type   : Relu
+op_name   : Relu_25
+inputs    : 441
+outputs   : 269
+
+op_type   : Conv
+op_name   : Conv_26
+inputs    : 269
+            445
+            446
+outputs   : 444
+
+op_type   : Conv
+op_name   : Conv_27
+inputs    : 266
+            448
+            449
+outputs   : 447
+
+op_type   : Add
+op_name   : Add_28
+inputs    : 444
+            447
+outputs   : 274
+
+op_type   : Relu
+op_name   : Relu_29
+inputs    : 274
+outputs   : 275
+
+op_type   : Conv
+op_name   : Conv_30
+inputs    : 275
+            451
+            452
+outputs   : 450
+
+op_type   : Relu
+op_name   : Relu_31
+inputs    : 450
+outputs   : 278
+
+op_type   : Conv
+op_name   : Conv_32
+inputs    : 278
+            454
+            455
+outputs   : 453
+
+op_type   : Add
+op_name   : Add_33
+inputs    : 453
+            275
+outputs   : 281
+
+op_type   : Relu
+op_name   : Relu_34
+inputs    : 281
+outputs   : 282
+
+op_type   : Conv
+op_name   : Conv_35
+inputs    : 282
+            457
+            458
+outputs   : 456
+
+op_type   : Relu
+op_name   : Relu_36
+inputs    : 456
+outputs   : 285
+
+op_type   : Conv
+op_name   : Conv_37
+inputs    : 285
+            460
+            461
+outputs   : 459
+
+op_type   : Conv
+op_name   : Conv_38
+inputs    : 282
+            463
+            464
+outputs   : 462
+
+op_type   : Add
+op_name   : Add_39
+inputs    : 459
+            462
+outputs   : 290
+
+op_type   : Relu
+op_name   : Relu_40
+inputs    : 290
+outputs   : 291
+
+op_type   : Conv
+op_name   : Conv_41
+inputs    : 291
+            466
+            467
+outputs   : 465
+
+op_type   : Relu
+op_name   : Relu_42
+inputs    : 465
+outputs   : 294
+
+op_type   : Conv
+op_name   : Conv_43
+inputs    : 294
+            469
+            470
+outputs   : 468
+
+op_type   : Add
+op_name   : Add_44
+inputs    : 468
+            291
+outputs   : 297
+
+op_type   : Relu
+op_name   : Relu_45
+inputs    : 297
+outputs   : 298
+
+op_type   : Conv
+op_name   : Conv_46
+inputs    : 250
+            472
+            473
+outputs   : 471
+
+op_type   : Conv
+op_name   : Conv_47
+inputs    : 266
+            475
+            476
+outputs   : 474
+
+op_type   : Conv
+op_name   : Conv_48
+inputs    : 282
+            478
+            479
+outputs   : 477
+
+op_type   : Conv
+op_name   : Conv_49
+inputs    : 298
+            481
+            482
+outputs   : 480
+
+op_type   : Resize
+op_name   : Resize_68
+inputs    : 480
+            323
+            323
+            322
+outputs   : 325
+
+op_type   : Add
+op_name   : Add_69
+inputs    : 477
+            325
+outputs   : 326
+
+op_type   : Resize
+op_name   : Resize_88
+inputs    : 326
+            323
+            323
+            342
+outputs   : 345
+
+op_type   : Add
+op_name   : Add_89
+inputs    : 474
+            345
+outputs   : 346
+
+op_type   : Resize
+op_name   : Resize_108
+inputs    : 346
+            323
+            323
+            362
+outputs   : 365
+
+op_type   : Add
+op_name   : Add_109
+inputs    : 471
+            365
+outputs   : 366
+
+op_type   : Conv
+op_name   : Conv_110
+inputs    : 366
+            484
+            485
+outputs   : 483
+
+op_type   : Conv
+op_name   : Conv_111
+inputs    : 346
+            487
+            488
+outputs   : 486
+
+op_type   : Conv
+op_name   : Conv_112
+inputs    : 326
+            490
+            491
+outputs   : 489
+
+op_type   : Conv
+op_name   : Conv_113
+inputs    : 480
+            493
+            494
+outputs   : 492
+
+op_type   : Resize
+op_name   : Resize_122
+inputs    : 486
+            323
+            323
+            362
+outputs   : 385
+
+op_type   : Resize
+op_name   : Resize_131
+inputs    : 489
+            323
+            323
+            362
+outputs   : 396
+
+op_type   : Resize
+op_name   : Resize_140
+inputs    : 492
+            323
+            323
+            362
+outputs   : 407
+
+op_type   : Concat
+op_name   : Concat_141
+inputs    : 483
+            385
+            396
+            407
+outputs   : 408
+
+op_type   : Conv
+op_name   : Conv_142
+inputs    : 408
+            core_model.neck_fuse_0.weight
+            core_model.neck_fuse_0.bias
+outputs   : 409
+
+op_type   : Transpose
+op_name   : Transpose_143
+inputs    : 409
+outputs   : fused_2d_features
+
+op_type   : Output
+name&shape: fused_2d_features;[6,64,176,64]
+
+===================================
+             Parsing...            
+===================================
+
+Pattern : Input ; node_name: network_input;
+op_id : 0 ; op_type: <<icraft::xir::InputNode>>
+Input  tensor : 
+Output tensor : { 6 256 704 3 } 
+op_id : 1 ; op_type: <<icraft::xir::SwapOrderNode>>
+Input  tensor : { 6 256 704 3 } 
+Output tensor : { 6 256 704 3 } 
+op_id : 2 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 256 704 3 } { 3 } 
+Output tensor : { 6 256 704 3 } 
+op_id : 3 ; op_type: <<icraft::xir::MultiplyNode>>
+Input  tensor : { 6 256 704 3 } { 3 } 
+Output tensor : { 6 256 704 3 } 
+
+Pattern : Conv ; node_name: Conv_0;
+op_id : 4 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 256 704 3 } { 7 7 3 64 } { 64 } 
+Output tensor : { 6 128 352 64 } 
+
+Pattern : Relu ; node_name: Relu_1;
+op_id : 5 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 128 352 64 } 
+Output tensor : { 6 128 352 64 } 
+
+Pattern : MaxPool ; node_name: MaxPool_2;
+op_id : 6 ; op_type: <<icraft::xir::MaxPool2dNode>>
+Input  tensor : { 6 128 352 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_3;
+op_id : 7 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Relu ; node_name: Relu_4;
+op_id : 8 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_5;
+op_id : 9 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Add ; node_name: Add_6;
+op_id : 10 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 64 176 64 } { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Relu ; node_name: Relu_7;
+op_id : 11 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_8;
+op_id : 12 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Relu ; node_name: Relu_9;
+op_id : 13 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_10;
+op_id : 14 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Add ; node_name: Add_11;
+op_id : 15 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 64 176 64 } { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Relu ; node_name: Relu_12;
+op_id : 16 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_13;
+op_id : 17 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 3 3 64 128 } { 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Relu ; node_name: Relu_14;
+op_id : 18 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 32 88 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Conv ; node_name: Conv_15;
+op_id : 19 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 128 } { 3 3 128 128 } { 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Conv ; node_name: Conv_16;
+op_id : 20 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 1 1 64 128 } { 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Add ; node_name: Add_17;
+op_id : 21 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 32 88 128 } { 6 32 88 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Relu ; node_name: Relu_18;
+op_id : 22 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 32 88 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Conv ; node_name: Conv_19;
+op_id : 23 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 128 } { 3 3 128 128 } { 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Relu ; node_name: Relu_20;
+op_id : 24 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 32 88 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Conv ; node_name: Conv_21;
+op_id : 25 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 128 } { 3 3 128 128 } { 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Add ; node_name: Add_22;
+op_id : 26 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 32 88 128 } { 6 32 88 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Relu ; node_name: Relu_23;
+op_id : 27 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 32 88 128 } 
+Output tensor : { 6 32 88 128 } 
+
+Pattern : Conv ; node_name: Conv_24;
+op_id : 28 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 128 } { 3 3 128 256 } { 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Relu ; node_name: Relu_25;
+op_id : 29 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 16 44 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Conv ; node_name: Conv_26;
+op_id : 30 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 256 } { 3 3 256 256 } { 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Conv ; node_name: Conv_27;
+op_id : 31 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 128 } { 1 1 128 256 } { 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Add ; node_name: Add_28;
+op_id : 32 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 16 44 256 } { 6 16 44 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Relu ; node_name: Relu_29;
+op_id : 33 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 16 44 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Conv ; node_name: Conv_30;
+op_id : 34 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 256 } { 3 3 256 256 } { 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Relu ; node_name: Relu_31;
+op_id : 35 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 16 44 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Conv ; node_name: Conv_32;
+op_id : 36 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 256 } { 3 3 256 256 } { 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Add ; node_name: Add_33;
+op_id : 37 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 16 44 256 } { 6 16 44 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Relu ; node_name: Relu_34;
+op_id : 38 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 16 44 256 } 
+Output tensor : { 6 16 44 256 } 
+
+Pattern : Conv ; node_name: Conv_35;
+op_id : 39 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 256 } { 3 3 256 512 } { 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Relu ; node_name: Relu_36;
+op_id : 40 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 8 22 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Conv ; node_name: Conv_37;
+op_id : 41 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 8 22 512 } { 3 3 512 512 } { 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Conv ; node_name: Conv_38;
+op_id : 42 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 256 } { 1 1 256 512 } { 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Add ; node_name: Add_39;
+op_id : 43 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 8 22 512 } { 6 8 22 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Relu ; node_name: Relu_40;
+op_id : 44 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 8 22 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Conv ; node_name: Conv_41;
+op_id : 45 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 8 22 512 } { 3 3 512 512 } { 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Relu ; node_name: Relu_42;
+op_id : 46 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 8 22 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Conv ; node_name: Conv_43;
+op_id : 47 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 8 22 512 } { 3 3 512 512 } { 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Add ; node_name: Add_44;
+op_id : 48 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 8 22 512 } { 6 8 22 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Relu ; node_name: Relu_45;
+op_id : 49 ; op_type: <<icraft::xir::ReLUNode>>
+Input  tensor : { 6 8 22 512 } 
+Output tensor : { 6 8 22 512 } 
+
+Pattern : Conv ; node_name: Conv_46;
+op_id : 50 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 1 1 64 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_47;
+op_id : 51 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 128 } { 1 1 128 64 } { 64 } 
+Output tensor : { 6 32 88 64 } 
+
+Pattern : Conv ; node_name: Conv_48;
+op_id : 52 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 256 } { 1 1 256 64 } { 64 } 
+Output tensor : { 6 16 44 64 } 
+
+Pattern : Conv ; node_name: Conv_49;
+op_id : 53 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 8 22 512 } { 1 1 512 64 } { 64 } 
+Output tensor : { 6 8 22 64 } 
+
+Pattern : Resize ; node_name: Resize_68;
+op_id : 54 ; op_type: <<icraft::xir::UpsampleNode>>
+Input  tensor : { 6 8 22 64 } 
+Output tensor : { 6 16 44 64 } 
+
+Pattern : Add ; node_name: Add_69;
+op_id : 55 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 16 44 64 } { 6 16 44 64 } 
+Output tensor : { 6 16 44 64 } 
+
+Pattern : Resize ; node_name: Resize_88;
+op_id : 56 ; op_type: <<icraft::xir::UpsampleNode>>
+Input  tensor : { 6 16 44 64 } 
+Output tensor : { 6 32 88 64 } 
+
+Pattern : Add ; node_name: Add_89;
+op_id : 57 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 32 88 64 } { 6 32 88 64 } 
+Output tensor : { 6 32 88 64 } 
+
+Pattern : Resize ; node_name: Resize_108;
+op_id : 58 ; op_type: <<icraft::xir::UpsampleNode>>
+Input  tensor : { 6 32 88 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Add ; node_name: Add_109;
+op_id : 59 ; op_type: <<icraft::xir::AddNode>>
+Input  tensor : { 6 64 176 64 } { 6 64 176 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_110;
+op_id : 60 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Conv ; node_name: Conv_111;
+op_id : 61 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 32 88 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 32 88 64 } 
+
+Pattern : Conv ; node_name: Conv_112;
+op_id : 62 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 16 44 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 16 44 64 } 
+
+Pattern : Conv ; node_name: Conv_113;
+op_id : 63 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 8 22 64 } { 3 3 64 64 } { 64 } 
+Output tensor : { 6 8 22 64 } 
+
+Pattern : Resize ; node_name: Resize_122;
+op_id : 64 ; op_type: <<icraft::xir::UpsampleNode>>
+Input  tensor : { 6 32 88 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Resize ; node_name: Resize_131;
+op_id : 65 ; op_type: <<icraft::xir::UpsampleNode>>
+Input  tensor : { 6 16 44 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Resize ; node_name: Resize_140;
+op_id : 66 ; op_type: <<icraft::xir::UpsampleNode>>
+Input  tensor : { 6 8 22 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Concat ; node_name: Concat_141;
+op_id : 67 ; op_type: <<icraft::xir::ConcatNode>>
+Input  tensor : { 6 64 176 64 } { 6 64 176 64 } { 6 64 176 64 } { 6 64 176 64 } 
+Output tensor : { 6 64 176 256 } 
+
+Pattern : Conv ; node_name: Conv_142;
+op_id : 68 ; op_type: <<icraft::xir::Conv2dNode>>
+Input  tensor : { 6 64 176 256 } { 3 3 256 64 } { 64 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Transpose ; node_name: Transpose_143;
+op_id : 69 ; op_type: <<icraft::xir::TransposeNode>>
+Input  tensor : { 6 64 176 64 } 
+Output tensor : { 6 64 64 176 } 
+op_id : 70 ; op_type: <<icraft::xir::TransposeNode>>
+Input  tensor : { 6 64 64 176 } 
+Output tensor : { 6 64 176 64 } 
+
+Pattern : Output ; ftmp_name: network_output
+op_id : 71 ; op_type: <<icraft::xir::OutputNode>>
+Input  tensor : { 6 64 176 64 } 
+Output tensor : 
